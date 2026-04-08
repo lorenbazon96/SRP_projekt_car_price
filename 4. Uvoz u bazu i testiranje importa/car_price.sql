@@ -1,5 +1,4 @@
 CREATE DATABASE cars_price;
-
 USE cars_price;
 
 DROP TABLE IF EXISTS car_raw;
@@ -27,7 +26,6 @@ CREATE TABLE car_raw (
 SELECT * FROM car_raw;
 
 # Kreiranje tablice i import podataka
-
 DROP TABLE IF EXISTS make;
 
 CREATE TABLE make (
@@ -39,7 +37,6 @@ CREATE TABLE make (
 INSERT INTO make (make)
 SELECT DISTINCT make
 FROM car_raw;
-
 
 DROP TABLE IF EXISTS model;
 
@@ -57,7 +54,6 @@ FROM car_raw r
 JOIN make m 
     ON r.make = m.make;
 
-
 DROP TABLE IF EXISTS seller;
 
 CREATE TABLE seller (
@@ -69,7 +65,6 @@ CREATE TABLE seller (
 INSERT INTO seller (seller)
 SELECT DISTINCT seller
 FROM car_raw;
-
 
 DROP TABLE IF EXISTS car;
 
@@ -114,8 +109,6 @@ JOIN model m
     AND m.make_id = mk.id
 GROUP BY r.vin;
 
-
-
 DROP TABLE IF EXISTS selling;
 
 CREATE TABLE selling (
@@ -147,7 +140,6 @@ JOIN car c ON r.vin = c.vin
 JOIN seller s ON r.seller = s.seller;
 
 # Testiranje točnosti importa
-
 SELECT COUNT(*) FROM car_raw;
 SELECT COUNT(*) FROM make;
 SELECT COUNT(*) FROM model;
@@ -209,10 +201,7 @@ WHERE sellingprice <= 0;
 
 SELECT COUNT(*) FROM selling;
 
-
-
 # Zadnje testiranje vracanja u csv
-
 SELECT
 mk.make,
 m.model,
@@ -237,11 +226,7 @@ JOIN make mk ON m.make_id = mk.id
 JOIN seller se ON s.seller_id = se.id
 ORDER BY s.id;
 
-
-
 # prebacivanje iz saledate u sale_date_dt i brisanje starijeg atributa
-
-
 ALTER TABLE selling ADD COLUMN sale_date_dt DATETIME NULL;
 
 UPDATE selling
