@@ -1,0 +1,3137 @@
+<?xml version='1.0' encoding='utf-8' ?>
+
+<!-- build 20261.26.0410.0924                               -->
+<workbook original-version='18.1' source-build='2026.1.1 (20261.26.0410.0924)' source-platform='win' version='18.1' xmlns:user='http://www.tableausoftware.com/xml/user'>
+  <document-format-change-manifest>
+    <AccessibleZoneTabOrder />
+    <AnimationOnByDefault />
+    <AutoCreateAndUpdateDSDPhoneLayouts />
+    <IntuitiveSorting />
+    <IntuitiveSorting_SP2 />
+    <MapboxVectorStylesAndLayers />
+    <MarkAnimation />
+    <ObjectModelEncapsulateLegacy />
+    <ObjectModelRelationshipPerfOptions />
+    <ObjectModelTableType />
+    <SchemaViewerObjectModel />
+    <SetMembershipControl />
+    <SheetIdentifierTracking />
+    <WindowsPersistSimpleIdentifiers />
+    <ZoneBackgroundTransparency />
+  </document-format-change-manifest>
+  <preferences>
+    <preference name='ui.encoding.shelf.height' value='24' />
+    <preference name='ui.shelf.height' value='26' />
+  </preferences>
+  <datasources>
+    <datasource caption='fact_vehicle_sales+ (cars_price_dw)' inline='true' name='federated.0apnkjd1myow5n1b2tesv01wjyex' version='18.1'>
+      <connection class='federated'>
+        <named-connections>
+          <named-connection caption='localhost' name='mysql.16ycx041cdodk615dq6sp0bf0neh'>
+            <connection class='mysql' dbname='cars_price_dw' odbc-native-protocol='' one-time-sql='' port='3306' server='localhost' source-charset='' username='root' />
+          </named-connection>
+        </named-connections>
+        <relation type='collection'>
+          <relation connection='mysql.16ycx041cdodk615dq6sp0bf0neh' name='fact_vehicle_sales' table='[fact_vehicle_sales]' type='table' />
+          <relation connection='mysql.16ycx041cdodk615dq6sp0bf0neh' name='dim_datum' table='[dim_datum]' type='table' />
+          <relation connection='mysql.16ycx041cdodk615dq6sp0bf0neh' name='dim_lokacija' table='[dim_lokacija]' type='table' />
+          <relation connection='mysql.16ycx041cdodk615dq6sp0bf0neh' name='dim_prodavac' table='[dim_prodavac]' type='table' />
+          <relation connection='mysql.16ycx041cdodk615dq6sp0bf0neh' name='dim_stanje' table='[dim_stanje]' type='table' />
+          <relation connection='mysql.16ycx041cdodk615dq6sp0bf0neh' name='dim_vozilo' table='[dim_vozilo]' type='table' />
+        </relation>
+        <cols>
+          <map key='[body]' value='[dim_vozilo].[body]' />
+          <map key='[color]' value='[dim_vozilo].[color]' />
+          <map key='[condition_tk (dim_stanje)]' value='[dim_stanje].[condition_tk]' />
+          <map key='[condition_tk]' value='[fact_vehicle_sales].[condition_tk]' />
+          <map key='[condition_val]' value='[dim_stanje].[condition_val]' />
+          <map key='[date_tk (dim_datum)]' value='[dim_datum].[date_tk]' />
+          <map key='[date_tk]' value='[fact_vehicle_sales].[date_tk]' />
+          <map key='[day]' value='[dim_datum].[day]' />
+          <map key='[day_of_week]' value='[dim_datum].[day_of_week]' />
+          <map key='[fact_tk]' value='[fact_vehicle_sales].[fact_tk]' />
+          <map key='[full_date]' value='[dim_datum].[full_date]' />
+          <map key='[interior]' value='[dim_vozilo].[interior]' />
+          <map key='[is_current]' value='[dim_vozilo].[is_current]' />
+          <map key='[location_tk (dim_lokacija)]' value='[dim_lokacija].[location_tk]' />
+          <map key='[location_tk]' value='[fact_vehicle_sales].[location_tk]' />
+          <map key='[make]' value='[dim_vozilo].[make]' />
+          <map key='[mmr]' value='[fact_vehicle_sales].[mmr]' />
+          <map key='[model]' value='[dim_vozilo].[model]' />
+          <map key='[month]' value='[dim_datum].[month]' />
+          <map key='[odometer]' value='[fact_vehicle_sales].[odometer]' />
+          <map key='[quarter]' value='[dim_datum].[quarter]' />
+          <map key='[sale_id]' value='[fact_vehicle_sales].[sale_id]' />
+          <map key='[seller]' value='[dim_prodavac].[seller]' />
+          <map key='[seller_tk (dim_prodavac)]' value='[dim_prodavac].[seller_tk]' />
+          <map key='[seller_tk]' value='[fact_vehicle_sales].[seller_tk]' />
+          <map key='[selling_price]' value='[fact_vehicle_sales].[selling_price]' />
+          <map key='[state]' value='[dim_lokacija].[state]' />
+          <map key='[transmission]' value='[dim_vozilo].[transmission]' />
+          <map key='[trim]' value='[dim_vozilo].[trim]' />
+          <map key='[valid_from]' value='[dim_vozilo].[valid_from]' />
+          <map key='[valid_to]' value='[dim_vozilo].[valid_to]' />
+          <map key='[vehicle_tk (dim_vozilo)]' value='[dim_vozilo].[vehicle_tk]' />
+          <map key='[vehicle_tk]' value='[fact_vehicle_sales].[vehicle_tk]' />
+          <map key='[version]' value='[dim_vozilo].[version]' />
+          <map key='[year (dim_datum)]' value='[dim_datum].[year]' />
+          <map key='[year]' value='[dim_vozilo].[year]' />
+        </cols>
+        <metadata-records>
+          <metadata-record class='column'>
+            <remote-name>fact_tk</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[fact_tk]</local-name>
+            <parent-name>[fact_vehicle_sales]</parent-name>
+            <remote-alias>fact_tk</remote-alias>
+            <ordinal>1</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>19</precision>
+            <contains-null>false</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_BIGINT&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_SBIGINT&quot;</attribute>
+            </attributes>
+            <object-id>[fact_vehicle_sales_011A10D9EF6F4F6C8F9AD0AFDF2253CE]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>vehicle_tk</remote-name>
+            <remote-type>3</remote-type>
+            <local-name>[vehicle_tk]</local-name>
+            <parent-name>[fact_vehicle_sales]</parent-name>
+            <remote-alias>vehicle_tk</remote-alias>
+            <ordinal>2</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>10</precision>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_INTEGER&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_SLONG&quot;</attribute>
+            </attributes>
+            <object-id>[fact_vehicle_sales_011A10D9EF6F4F6C8F9AD0AFDF2253CE]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>date_tk</remote-name>
+            <remote-type>3</remote-type>
+            <local-name>[date_tk]</local-name>
+            <parent-name>[fact_vehicle_sales]</parent-name>
+            <remote-alias>date_tk</remote-alias>
+            <ordinal>3</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>10</precision>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_INTEGER&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_SLONG&quot;</attribute>
+            </attributes>
+            <object-id>[fact_vehicle_sales_011A10D9EF6F4F6C8F9AD0AFDF2253CE]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>location_tk</remote-name>
+            <remote-type>3</remote-type>
+            <local-name>[location_tk]</local-name>
+            <parent-name>[fact_vehicle_sales]</parent-name>
+            <remote-alias>location_tk</remote-alias>
+            <ordinal>4</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>10</precision>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_INTEGER&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_SLONG&quot;</attribute>
+            </attributes>
+            <object-id>[fact_vehicle_sales_011A10D9EF6F4F6C8F9AD0AFDF2253CE]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>seller_tk</remote-name>
+            <remote-type>3</remote-type>
+            <local-name>[seller_tk]</local-name>
+            <parent-name>[fact_vehicle_sales]</parent-name>
+            <remote-alias>seller_tk</remote-alias>
+            <ordinal>5</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>10</precision>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_INTEGER&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_SLONG&quot;</attribute>
+            </attributes>
+            <object-id>[fact_vehicle_sales_011A10D9EF6F4F6C8F9AD0AFDF2253CE]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>condition_tk</remote-name>
+            <remote-type>3</remote-type>
+            <local-name>[condition_tk]</local-name>
+            <parent-name>[fact_vehicle_sales]</parent-name>
+            <remote-alias>condition_tk</remote-alias>
+            <ordinal>6</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>10</precision>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_INTEGER&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_SLONG&quot;</attribute>
+            </attributes>
+            <object-id>[fact_vehicle_sales_011A10D9EF6F4F6C8F9AD0AFDF2253CE]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>sale_id</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[sale_id]</local-name>
+            <parent-name>[fact_vehicle_sales]</parent-name>
+            <remote-alias>sale_id</remote-alias>
+            <ordinal>7</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>50</width>
+            <contains-null>true</contains-null>
+            <collation charset='296' flag='1' name='LROOT_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_WVARCHAR&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_WCHAR&quot;</attribute>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+            <object-id>[fact_vehicle_sales_011A10D9EF6F4F6C8F9AD0AFDF2253CE]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>selling_price</remote-name>
+            <remote-type>4</remote-type>
+            <local-name>[selling_price]</local-name>
+            <parent-name>[fact_vehicle_sales]</parent-name>
+            <remote-alias>selling_price</remote-alias>
+            <ordinal>8</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>6</precision>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_REAL&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_FLOAT&quot;</attribute>
+            </attributes>
+            <object-id>[fact_vehicle_sales_011A10D9EF6F4F6C8F9AD0AFDF2253CE]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>mmr</remote-name>
+            <remote-type>4</remote-type>
+            <local-name>[mmr]</local-name>
+            <parent-name>[fact_vehicle_sales]</parent-name>
+            <remote-alias>mmr</remote-alias>
+            <ordinal>9</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>6</precision>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_REAL&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_FLOAT&quot;</attribute>
+            </attributes>
+            <object-id>[fact_vehicle_sales_011A10D9EF6F4F6C8F9AD0AFDF2253CE]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>odometer</remote-name>
+            <remote-type>4</remote-type>
+            <local-name>[odometer]</local-name>
+            <parent-name>[fact_vehicle_sales]</parent-name>
+            <remote-alias>odometer</remote-alias>
+            <ordinal>10</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>6</precision>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_REAL&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_FLOAT&quot;</attribute>
+            </attributes>
+            <object-id>[fact_vehicle_sales_011A10D9EF6F4F6C8F9AD0AFDF2253CE]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>date_tk</remote-name>
+            <remote-type>3</remote-type>
+            <local-name>[date_tk (dim_datum)]</local-name>
+            <parent-name>[dim_datum]</parent-name>
+            <remote-alias>date_tk</remote-alias>
+            <ordinal>12</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>10</precision>
+            <contains-null>false</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_INTEGER&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_SLONG&quot;</attribute>
+            </attributes>
+            <object-id>[dim_datum_127D0A28A37B4AACAAAC75BE561BF7B0]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>full_date</remote-name>
+            <remote-type>7</remote-type>
+            <local-name>[full_date]</local-name>
+            <parent-name>[dim_datum]</parent-name>
+            <remote-alias>full_date</remote-alias>
+            <ordinal>13</ordinal>
+            <local-type>date</local-type>
+            <aggregation>Year</aggregation>
+            <contains-null>false</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_TYPE_DATE&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_TYPE_DATE&quot;</attribute>
+            </attributes>
+            <object-id>[dim_datum_127D0A28A37B4AACAAAC75BE561BF7B0]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>year</remote-name>
+            <remote-type>3</remote-type>
+            <local-name>[year (dim_datum)]</local-name>
+            <parent-name>[dim_datum]</parent-name>
+            <remote-alias>year</remote-alias>
+            <ordinal>14</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>10</precision>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_INTEGER&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_SLONG&quot;</attribute>
+            </attributes>
+            <object-id>[dim_datum_127D0A28A37B4AACAAAC75BE561BF7B0]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>month</remote-name>
+            <remote-type>3</remote-type>
+            <local-name>[month]</local-name>
+            <parent-name>[dim_datum]</parent-name>
+            <remote-alias>month</remote-alias>
+            <ordinal>15</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>10</precision>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_INTEGER&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_SLONG&quot;</attribute>
+            </attributes>
+            <object-id>[dim_datum_127D0A28A37B4AACAAAC75BE561BF7B0]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>day</remote-name>
+            <remote-type>3</remote-type>
+            <local-name>[day]</local-name>
+            <parent-name>[dim_datum]</parent-name>
+            <remote-alias>day</remote-alias>
+            <ordinal>16</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>10</precision>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_INTEGER&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_SLONG&quot;</attribute>
+            </attributes>
+            <object-id>[dim_datum_127D0A28A37B4AACAAAC75BE561BF7B0]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>quarter</remote-name>
+            <remote-type>3</remote-type>
+            <local-name>[quarter]</local-name>
+            <parent-name>[dim_datum]</parent-name>
+            <remote-alias>quarter</remote-alias>
+            <ordinal>17</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>10</precision>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_INTEGER&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_SLONG&quot;</attribute>
+            </attributes>
+            <object-id>[dim_datum_127D0A28A37B4AACAAAC75BE561BF7B0]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>day_of_week</remote-name>
+            <remote-type>3</remote-type>
+            <local-name>[day_of_week]</local-name>
+            <parent-name>[dim_datum]</parent-name>
+            <remote-alias>day_of_week</remote-alias>
+            <ordinal>18</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>10</precision>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_INTEGER&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_SLONG&quot;</attribute>
+            </attributes>
+            <object-id>[dim_datum_127D0A28A37B4AACAAAC75BE561BF7B0]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>location_tk</remote-name>
+            <remote-type>3</remote-type>
+            <local-name>[location_tk (dim_lokacija)]</local-name>
+            <parent-name>[dim_lokacija]</parent-name>
+            <remote-alias>location_tk</remote-alias>
+            <ordinal>20</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>10</precision>
+            <contains-null>false</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_INTEGER&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_SLONG&quot;</attribute>
+            </attributes>
+            <object-id>[dim_lokacija_DC0696E9B236450584F0AA081767B8F2]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>state</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[state]</local-name>
+            <parent-name>[dim_lokacija]</parent-name>
+            <remote-alias>state</remote-alias>
+            <ordinal>21</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>100</width>
+            <contains-null>true</contains-null>
+            <collation charset='296' flag='1' name='LROOT_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_WVARCHAR&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_WCHAR&quot;</attribute>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+            <object-id>[dim_lokacija_DC0696E9B236450584F0AA081767B8F2]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>seller_tk</remote-name>
+            <remote-type>3</remote-type>
+            <local-name>[seller_tk (dim_prodavac)]</local-name>
+            <parent-name>[dim_prodavac]</parent-name>
+            <remote-alias>seller_tk</remote-alias>
+            <ordinal>23</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>10</precision>
+            <contains-null>false</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_INTEGER&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_SLONG&quot;</attribute>
+            </attributes>
+            <object-id>[dim_prodavac_1B5501A678F446CCB2B4DF0C5939EAA0]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>seller</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[seller]</local-name>
+            <parent-name>[dim_prodavac]</parent-name>
+            <remote-alias>seller</remote-alias>
+            <ordinal>24</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>255</width>
+            <contains-null>true</contains-null>
+            <collation charset='296' flag='1' name='LROOT_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_WVARCHAR&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_WCHAR&quot;</attribute>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+            <object-id>[dim_prodavac_1B5501A678F446CCB2B4DF0C5939EAA0]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>condition_tk</remote-name>
+            <remote-type>3</remote-type>
+            <local-name>[condition_tk (dim_stanje)]</local-name>
+            <parent-name>[dim_stanje]</parent-name>
+            <remote-alias>condition_tk</remote-alias>
+            <ordinal>26</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>10</precision>
+            <contains-null>false</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_INTEGER&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_SLONG&quot;</attribute>
+            </attributes>
+            <object-id>[dim_stanje_189BC8E2F4AF47DE83C9552F441FA77C]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>condition_val</remote-name>
+            <remote-type>4</remote-type>
+            <local-name>[condition_val]</local-name>
+            <parent-name>[dim_stanje]</parent-name>
+            <remote-alias>condition_val</remote-alias>
+            <ordinal>27</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>6</precision>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_REAL&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_FLOAT&quot;</attribute>
+            </attributes>
+            <object-id>[dim_stanje_189BC8E2F4AF47DE83C9552F441FA77C]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>vehicle_tk</remote-name>
+            <remote-type>3</remote-type>
+            <local-name>[vehicle_tk (dim_vozilo)]</local-name>
+            <parent-name>[dim_vozilo]</parent-name>
+            <remote-alias>vehicle_tk</remote-alias>
+            <ordinal>29</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>10</precision>
+            <contains-null>false</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_INTEGER&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_SLONG&quot;</attribute>
+            </attributes>
+            <object-id>[dim_vozilo_FD29F7C835FD4B8580CC15D3888D9325]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>make</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[make]</local-name>
+            <parent-name>[dim_vozilo]</parent-name>
+            <remote-alias>make</remote-alias>
+            <ordinal>30</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>100</width>
+            <contains-null>true</contains-null>
+            <collation charset='296' flag='1' name='LROOT_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_WVARCHAR&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_WCHAR&quot;</attribute>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+            <object-id>[dim_vozilo_FD29F7C835FD4B8580CC15D3888D9325]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>model</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[model]</local-name>
+            <parent-name>[dim_vozilo]</parent-name>
+            <remote-alias>model</remote-alias>
+            <ordinal>31</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>150</width>
+            <contains-null>true</contains-null>
+            <collation charset='296' flag='1' name='LROOT_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_WVARCHAR&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_WCHAR&quot;</attribute>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+            <object-id>[dim_vozilo_FD29F7C835FD4B8580CC15D3888D9325]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>trim</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[trim]</local-name>
+            <parent-name>[dim_vozilo]</parent-name>
+            <remote-alias>trim</remote-alias>
+            <ordinal>32</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>150</width>
+            <contains-null>true</contains-null>
+            <collation charset='296' flag='1' name='LROOT_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_WVARCHAR&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_WCHAR&quot;</attribute>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+            <object-id>[dim_vozilo_FD29F7C835FD4B8580CC15D3888D9325]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>body</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[body]</local-name>
+            <parent-name>[dim_vozilo]</parent-name>
+            <remote-alias>body</remote-alias>
+            <ordinal>33</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>100</width>
+            <contains-null>true</contains-null>
+            <collation charset='296' flag='1' name='LROOT_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_WVARCHAR&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_WCHAR&quot;</attribute>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+            <object-id>[dim_vozilo_FD29F7C835FD4B8580CC15D3888D9325]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>transmission</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[transmission]</local-name>
+            <parent-name>[dim_vozilo]</parent-name>
+            <remote-alias>transmission</remote-alias>
+            <ordinal>34</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>50</width>
+            <contains-null>true</contains-null>
+            <collation charset='296' flag='1' name='LROOT_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_WVARCHAR&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_WCHAR&quot;</attribute>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+            <object-id>[dim_vozilo_FD29F7C835FD4B8580CC15D3888D9325]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>color</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[color]</local-name>
+            <parent-name>[dim_vozilo]</parent-name>
+            <remote-alias>color</remote-alias>
+            <ordinal>35</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>50</width>
+            <contains-null>true</contains-null>
+            <collation charset='296' flag='1' name='LROOT_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_WVARCHAR&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_WCHAR&quot;</attribute>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+            <object-id>[dim_vozilo_FD29F7C835FD4B8580CC15D3888D9325]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>interior</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[interior]</local-name>
+            <parent-name>[dim_vozilo]</parent-name>
+            <remote-alias>interior</remote-alias>
+            <ordinal>36</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>50</width>
+            <contains-null>true</contains-null>
+            <collation charset='296' flag='1' name='LROOT_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_WVARCHAR&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_WCHAR&quot;</attribute>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+            <object-id>[dim_vozilo_FD29F7C835FD4B8580CC15D3888D9325]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>year</remote-name>
+            <remote-type>3</remote-type>
+            <local-name>[year]</local-name>
+            <parent-name>[dim_vozilo]</parent-name>
+            <remote-alias>year</remote-alias>
+            <ordinal>37</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>10</precision>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_INTEGER&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_SLONG&quot;</attribute>
+            </attributes>
+            <object-id>[dim_vozilo_FD29F7C835FD4B8580CC15D3888D9325]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>version</remote-name>
+            <remote-type>3</remote-type>
+            <local-name>[version]</local-name>
+            <parent-name>[dim_vozilo]</parent-name>
+            <remote-alias>version</remote-alias>
+            <ordinal>38</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>10</precision>
+            <contains-null>false</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_INTEGER&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_SLONG&quot;</attribute>
+            </attributes>
+            <object-id>[dim_vozilo_FD29F7C835FD4B8580CC15D3888D9325]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>valid_from</remote-name>
+            <remote-type>7</remote-type>
+            <local-name>[valid_from]</local-name>
+            <parent-name>[dim_vozilo]</parent-name>
+            <remote-alias>valid_from</remote-alias>
+            <ordinal>39</ordinal>
+            <local-type>date</local-type>
+            <aggregation>Year</aggregation>
+            <contains-null>false</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_TYPE_DATE&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_TYPE_DATE&quot;</attribute>
+            </attributes>
+            <object-id>[dim_vozilo_FD29F7C835FD4B8580CC15D3888D9325]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>valid_to</remote-name>
+            <remote-type>7</remote-type>
+            <local-name>[valid_to]</local-name>
+            <parent-name>[dim_vozilo]</parent-name>
+            <remote-alias>valid_to</remote-alias>
+            <ordinal>40</ordinal>
+            <local-type>date</local-type>
+            <aggregation>Year</aggregation>
+            <contains-null>false</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_TYPE_DATE&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_TYPE_DATE&quot;</attribute>
+            </attributes>
+            <object-id>[dim_vozilo_FD29F7C835FD4B8580CC15D3888D9325]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>is_current</remote-name>
+            <remote-type>16</remote-type>
+            <local-name>[is_current]</local-name>
+            <parent-name>[dim_vozilo]</parent-name>
+            <remote-alias>is_current</remote-alias>
+            <ordinal>41</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>3</precision>
+            <contains-null>false</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_TINYINT&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_STINYINT&quot;</attribute>
+            </attributes>
+            <object-id>[dim_vozilo_FD29F7C835FD4B8580CC15D3888D9325]</object-id>
+          </metadata-record>
+        </metadata-records>
+      </connection>
+      <aliases enabled='yes' />
+      <column caption='dim_datum' datatype='table' name='[__tableau_internal_object_id__].[dim_datum_127D0A28A37B4AACAAAC75BE561BF7B0]' role='measure' type='quantitative' />
+      <column caption='dim_lokacija' datatype='table' name='[__tableau_internal_object_id__].[dim_lokacija_DC0696E9B236450584F0AA081767B8F2]' role='measure' type='quantitative' />
+      <column caption='dim_prodavac' datatype='table' name='[__tableau_internal_object_id__].[dim_prodavac_1B5501A678F446CCB2B4DF0C5939EAA0]' role='measure' type='quantitative' />
+      <column caption='dim_stanje' datatype='table' name='[__tableau_internal_object_id__].[dim_stanje_189BC8E2F4AF47DE83C9552F441FA77C]' role='measure' type='quantitative' />
+      <column caption='dim_vozilo' datatype='table' name='[__tableau_internal_object_id__].[dim_vozilo_FD29F7C835FD4B8580CC15D3888D9325]' role='measure' type='quantitative' />
+      <column caption='fact_vehicle_sales' datatype='table' name='[__tableau_internal_object_id__].[fact_vehicle_sales_011A10D9EF6F4F6C8F9AD0AFDF2253CE]' role='measure' type='quantitative' />
+      <column aggregation='Sum' datatype='integer' name='[condition_tk (dim_stanje)]' role='dimension' type='ordinal' />
+      <column aggregation='Sum' datatype='integer' name='[condition_tk]' role='dimension' type='ordinal' />
+      <column datatype='real' name='[condition_val]' role='measure' type='quantitative' />
+      <column aggregation='Sum' datatype='integer' name='[date_tk (dim_datum)]' role='dimension' type='ordinal' />
+      <column aggregation='Sum' datatype='integer' name='[date_tk]' role='dimension' type='ordinal' />
+      <column datatype='integer' name='[day]' role='dimension' type='quantitative' />
+      <column datatype='integer' name='[day_of_week]' role='dimension' type='quantitative' />
+      <column aggregation='Sum' datatype='integer' name='[location_tk (dim_lokacija)]' role='dimension' type='ordinal' />
+      <column aggregation='Sum' datatype='integer' name='[location_tk]' role='dimension' type='ordinal' />
+      <column datatype='string' name='[make]' role='dimension' type='nominal' />
+      <column datatype='real' name='[mmr]' role='measure' type='quantitative' />
+      <column datatype='integer' name='[month]' role='dimension' type='quantitative' />
+      <column datatype='real' name='[odometer]' role='measure' type='quantitative' />
+      <column datatype='integer' name='[quarter]' role='dimension' type='quantitative' />
+      <column aggregation='Sum' datatype='integer' name='[seller_tk (dim_prodavac)]' role='dimension' type='ordinal' />
+      <column aggregation='Sum' datatype='integer' name='[seller_tk]' role='dimension' type='ordinal' />
+      <column aggregation='None' datatype='integer' name='[selling_price (bin)]' role='dimension' type='quantitative'>
+        <calculation class='bin' decimals='3' formula='[selling_price]' peg='0' size='6038' />
+      </column>
+      <column aggregation='Sum' datatype='real' name='[selling_price]' role='dimension' type='ordinal' />
+      <column datatype='string' name='[state]' role='dimension' semantic-role='[State].[Name]' type='nominal' />
+      <column aggregation='None' datatype='integer' name='[vehicle_tk (dim_vozilo) (bin)]' role='dimension' type='quantitative'>
+        <calculation class='bin' decimals='3' formula='[vehicle_tk (dim_vozilo)]' peg='0' size='1338' />
+      </column>
+      <column aggregation='Sum' datatype='integer' name='[vehicle_tk (dim_vozilo)]' role='dimension' type='ordinal' />
+      <column aggregation='Sum' datatype='integer' name='[vehicle_tk]' role='dimension' type='ordinal' />
+      <column datatype='integer' name='[year (dim_datum)]' role='dimension' type='quantitative' />
+      <column datatype='integer' name='[year]' role='dimension' type='quantitative' />
+      <column-instance column='[__tableau_internal_object_id__].[dim_datum_127D0A28A37B4AACAAAC75BE561BF7B0]' derivation='Count' name='[__tableau_internal_object_id__].[cnt:dim_datum_127D0A28A37B4AACAAAC75BE561BF7B0:ok]' pivot='key' type='ordinal' />
+      <column-instance column='[condition_val]' derivation='Attribute' name='[attr:condition_val:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[selling_price]' derivation='Attribute' name='[attr:selling_price:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[vehicle_tk]' derivation='Attribute' name='[attr:vehicle_tk:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[condition_val]' derivation='Avg' name='[avg:condition_val:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[date_tk (dim_datum)]' derivation='Avg' name='[avg:date_tk (dim_datum):qk]' pivot='key' type='quantitative' />
+      <column-instance column='[mmr]' derivation='Avg' name='[avg:mmr:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[odometer]' derivation='Avg' name='[avg:odometer:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[selling_price]' derivation='Avg' name='[avg:selling_price:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[condition_val]' derivation='Count' name='[cnt:condition_val:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[selling_price]' derivation='Count' name='[cnt:selling_price:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[vehicle_tk]' derivation='Count' name='[cnt:vehicle_tk:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[condition_val]' derivation='CountD' name='[ctd:condition_val:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[condition_val]' derivation='None' name='[none:condition_val:ok]' pivot='key' type='ordinal' />
+      <column-instance column='[condition_val]' derivation='None' name='[none:condition_val:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[make]' derivation='None' name='[none:make:nk]' pivot='key' type='nominal' />
+      <column-instance column='[mmr]' derivation='None' name='[none:mmr:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[odometer]' derivation='None' name='[none:odometer:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[selling_price]' derivation='None' name='[none:selling_price:ok]' pivot='key' type='ordinal' />
+      <column-instance column='[vehicle_tk]' derivation='None' name='[none:vehicle_tk:ok]' pivot='key' type='ordinal' />
+      <column-instance column='[year]' derivation='None' name='[none:year:ok]' pivot='key' type='ordinal' />
+      <column-instance column='[condition_val]' derivation='Sum' name='[sum:condition_val:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[mmr]' derivation='Sum' name='[sum:mmr:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[odometer]' derivation='Sum' name='[sum:odometer:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[selling_price]' derivation='Sum' name='[sum:selling_price:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[vehicle_tk]' derivation='Sum' name='[sum:vehicle_tk:qk]' pivot='key' type='quantitative' />
+      <group caption='Action (condition_val)' hidden='true' name='[Action (condition_val)]' name-style='unqualified' user:auto-column='sheet_link'>
+        <groupfilter function='crossjoin'>
+          <groupfilter function='level-members' level='[none:condition_val:ok]' />
+        </groupfilter>
+      </group>
+      <group caption='Action (year)' hidden='true' name='[Action (year)]' name-style='unqualified' user:auto-column='sheet_link'>
+        <groupfilter function='crossjoin'>
+          <groupfilter function='level-members' level='[none:year:ok]' />
+        </groupfilter>
+      </group>
+      <layout dim-ordering='alphabetic' measure-ordering='alphabetic' show-structure='true' />
+      <style>
+        <style-rule element='mark'>
+          <encoding attr='color' field='[:Measure Names]' type='palette'>
+            <map to='#4e79a7'>
+              <bucket>&quot;[federated.0apnkjd1myow5n1b2tesv01wjyex].[attr:vehicle_tk:qk]&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;[federated.0apnkjd1myow5n1b2tesv01wjyex].[avg:date_tk (dim_datum):qk]&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;[federated.0apnkjd1myow5n1b2tesv01wjyex].[cnt:vehicle_tk:qk]&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;[federated.0apnkjd1myow5n1b2tesv01wjyex].[none:vehicle_tk:ok]&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;[federated.0apnkjd1myow5n1b2tesv01wjyex].[sum:vehicle_tk:qk]&quot;</bucket>
+            </map>
+            <map to='#59a14f'>
+              <bucket>&quot;[federated.0apnkjd1myow5n1b2tesv01wjyex].[attr:condition_val:qk]&quot;</bucket>
+            </map>
+            <map to='#59a14f'>
+              <bucket>&quot;[federated.0apnkjd1myow5n1b2tesv01wjyex].[avg:condition_val:qk]&quot;</bucket>
+            </map>
+            <map to='#59a14f'>
+              <bucket>&quot;[federated.0apnkjd1myow5n1b2tesv01wjyex].[avg:selling_price:qk]&quot;</bucket>
+            </map>
+            <map to='#59a14f'>
+              <bucket>&quot;[federated.0apnkjd1myow5n1b2tesv01wjyex].[cnt:condition_val:qk]&quot;</bucket>
+            </map>
+            <map to='#59a14f'>
+              <bucket>&quot;[federated.0apnkjd1myow5n1b2tesv01wjyex].[ctd:condition_val:qk]&quot;</bucket>
+            </map>
+            <map to='#59a14f'>
+              <bucket>&quot;[federated.0apnkjd1myow5n1b2tesv01wjyex].[none:condition_val:qk]&quot;</bucket>
+            </map>
+            <map to='#59a14f'>
+              <bucket>&quot;[federated.0apnkjd1myow5n1b2tesv01wjyex].[sum:condition_val:qk]&quot;</bucket>
+            </map>
+            <map to='#76b7b2'>
+              <bucket>&quot;[federated.0apnkjd1myow5n1b2tesv01wjyex]&quot;</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>&quot;[federated.0apnkjd1myow5n1b2tesv01wjyex].[avg:mmr:qk]&quot;</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>&quot;[federated.0apnkjd1myow5n1b2tesv01wjyex].[none:mmr:qk]&quot;</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>&quot;[federated.0apnkjd1myow5n1b2tesv01wjyex].[sum:mmr:qk]&quot;</bucket>
+            </map>
+            <map to='#edc948'>
+              <bucket>&quot;[federated.0apnkjd1myow5n1b2tesv01wjyex].[attr:selling_price:qk]&quot;</bucket>
+            </map>
+            <map to='#edc948'>
+              <bucket>&quot;[federated.0apnkjd1myow5n1b2tesv01wjyex].[cnt:selling_price:qk]&quot;</bucket>
+            </map>
+            <map to='#edc948'>
+              <bucket>&quot;[federated.0apnkjd1myow5n1b2tesv01wjyex].[none:make:nk]&quot;</bucket>
+            </map>
+            <map to='#edc948'>
+              <bucket>&quot;[federated.0apnkjd1myow5n1b2tesv01wjyex].[none:selling_price:ok]&quot;</bucket>
+            </map>
+            <map to='#edc948'>
+              <bucket>&quot;[federated.0apnkjd1myow5n1b2tesv01wjyex].[sum:selling_price:qk]&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;[federated.0apnkjd1myow5n1b2tesv01wjyex].[avg:odometer:qk]&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;[federated.0apnkjd1myow5n1b2tesv01wjyex].[none:odometer:qk]&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;[federated.0apnkjd1myow5n1b2tesv01wjyex].[sum:odometer:qk]&quot;</bucket>
+            </map>
+          </encoding>
+          <encoding attr='color' field='[__tableau_internal_object_id__].[cnt:dim_datum_127D0A28A37B4AACAAAC75BE561BF7B0:ok]' type='palette'>
+            <map to='#499894'>
+              <bucket>97</bucket>
+            </map>
+            <map to='#499894'>
+              <bucket>114</bucket>
+            </map>
+            <map to='#499894'>
+              <bucket>146</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>1</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>40</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>141</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>178</bucket>
+            </map>
+            <map to='#59a14f'>
+              <bucket>49</bucket>
+            </map>
+            <map to='#59a14f'>
+              <bucket>55</bucket>
+            </map>
+            <map to='#59a14f'>
+              <bucket>155</bucket>
+            </map>
+            <map to='#76b7b2'>
+              <bucket>4</bucket>
+            </map>
+            <map to='#79706e'>
+              <bucket>119</bucket>
+            </map>
+            <map to='#79706e'>
+              <bucket>121</bucket>
+            </map>
+            <map to='#86bcb6'>
+              <bucket>98</bucket>
+            </map>
+            <map to='#86bcb6'>
+              <bucket>130</bucket>
+            </map>
+            <map to='#86bcb6'>
+              <bucket>158</bucket>
+            </map>
+            <map to='#8cd17d'>
+              <bucket>63</bucket>
+            </map>
+            <map to='#8cd17d'>
+              <bucket>66</bucket>
+            </map>
+            <map to='#9d7660'>
+              <bucket>127</bucket>
+            </map>
+            <map to='#9d7660'>
+              <bucket>135</bucket>
+            </map>
+            <map to='#a0cbe8'>
+              <bucket>21</bucket>
+            </map>
+            <map to='#a0cbe8'>
+              <bucket>43</bucket>
+            </map>
+            <map to='#a0cbe8'>
+              <bucket>145</bucket>
+            </map>
+            <map to='#b07aa1'>
+              <bucket>132</bucket>
+            </map>
+            <map to='#b07aa1'>
+              <bucket>136</bucket>
+            </map>
+            <map to='#b6992d'>
+              <bucket>72</bucket>
+            </map>
+            <map to='#b6992d'>
+              <bucket>129</bucket>
+            </map>
+            <map to='#bab0ac'>
+              <bucket>122</bucket>
+            </map>
+            <map to='#bab0ac'>
+              <bucket>123</bucket>
+            </map>
+            <map to='#d37295'>
+              <bucket>124</bucket>
+            </map>
+            <map to='#d37295'>
+              <bucket>131</bucket>
+            </map>
+            <map to='#d4a6c8'>
+              <bucket>126</bucket>
+            </map>
+            <map to='#d4a6c8'>
+              <bucket>134</bucket>
+            </map>
+            <map to='#d7b5a6'>
+              <bucket>128</bucket>
+            </map>
+            <map to='#d7b5a6'>
+              <bucket>137</bucket>
+            </map>
+            <map to='#d7b5a6'>
+              <bucket>140</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>3</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>103</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>116</bucket>
+            </map>
+            <map to='#f1ce63'>
+              <bucket>80</bucket>
+            </map>
+            <map to='#f1ce63'>
+              <bucket>113</bucket>
+            </map>
+            <map to='#f1ce63'>
+              <bucket>143</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>2</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>29</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>47</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>150</bucket>
+            </map>
+            <map to='#fabfd2'>
+              <bucket>125</bucket>
+            </map>
+            <map to='#fabfd2'>
+              <bucket>133</bucket>
+            </map>
+            <map to='#ff9d9a'>
+              <bucket>115</bucket>
+            </map>
+            <map to='#ff9d9a'>
+              <bucket>118</bucket>
+            </map>
+            <map to='#ffbe7d'>
+              <bucket>45</bucket>
+            </map>
+            <map to='#ffbe7d'>
+              <bucket>53</bucket>
+            </map>
+            <map to='#ffbe7d'>
+              <bucket>152</bucket>
+            </map>
+          </encoding>
+          <encoding attr='color' field='[none:make:nk]' type='palette'>
+            <map to='#499894'>
+              <bucket>&quot;chrysler&quot;</bucket>
+            </map>
+            <map to='#499894'>
+              <bucket>&quot;lincoln&quot;</bucket>
+            </map>
+            <map to='#499894'>
+              <bucket>&quot;suzuki&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;acura&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;infiniti&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;porsche&quot;</bucket>
+            </map>
+            <map to='#59a14f'>
+              <bucket>&quot;bmw&quot;</bucket>
+            </map>
+            <map to='#59a14f'>
+              <bucket>&quot;kia&quot;</bucket>
+            </map>
+            <map to='#59a14f'>
+              <bucket>&quot;saturn&quot;</bucket>
+            </map>
+            <map to='#79706e'>
+              <bucket>&quot;fiat&quot;</bucket>
+            </map>
+            <map to='#79706e'>
+              <bucket>&quot;mercedes-benz&quot;</bucket>
+            </map>
+            <map to='#79706e'>
+              <bucket>&quot;volvo&quot;</bucket>
+            </map>
+            <map to='#86bcb6'>
+              <bucket>&quot;daewoo&quot;</bucket>
+            </map>
+            <map to='#86bcb6'>
+              <bucket>&quot;lotus&quot;</bucket>
+            </map>
+            <map to='#86bcb6'>
+              <bucket>&quot;tesla&quot;</bucket>
+            </map>
+            <map to='#8cd17d'>
+              <bucket>&quot;buick&quot;</bucket>
+            </map>
+            <map to='#8cd17d'>
+              <bucket>&quot;lamborghini&quot;</bucket>
+            </map>
+            <map to='#8cd17d'>
+              <bucket>&quot;scion&quot;</bucket>
+            </map>
+            <map to='#9d7660'>
+              <bucket>&quot;hummer&quot;</bucket>
+            </map>
+            <map to='#9d7660'>
+              <bucket>&quot;plymouth&quot;</bucket>
+            </map>
+            <map to='#a0cbe8'>
+              <bucket>&quot;aston martin&quot;</bucket>
+            </map>
+            <map to='#a0cbe8'>
+              <bucket>&quot;isuzu&quot;</bucket>
+            </map>
+            <map to='#a0cbe8'>
+              <bucket>&quot;ram&quot;</bucket>
+            </map>
+            <map to='#b07aa1'>
+              <bucket>&quot;gmc&quot;</bucket>
+            </map>
+            <map to='#b07aa1'>
+              <bucket>&quot;nissan&quot;</bucket>
+            </map>
+            <map to='#b6992d'>
+              <bucket>&quot;cadillac&quot;</bucket>
+            </map>
+            <map to='#b6992d'>
+              <bucket>&quot;land rover&quot;</bucket>
+            </map>
+            <map to='#b6992d'>
+              <bucket>&quot;smart&quot;</bucket>
+            </map>
+            <map to='#bab0ac'>
+              <bucket>&quot;fisker&quot;</bucket>
+            </map>
+            <map to='#bab0ac'>
+              <bucket>&quot;mercury&quot;</bucket>
+            </map>
+            <map to='#d37295'>
+              <bucket>&quot;ford&quot;</bucket>
+            </map>
+            <map to='#d37295'>
+              <bucket>&quot;mini&quot;</bucket>
+            </map>
+            <map to='#d4a6c8'>
+              <bucket>&quot;honda&quot;</bucket>
+            </map>
+            <map to='#d4a6c8'>
+              <bucket>&quot;oldsmobile&quot;</bucket>
+            </map>
+            <map to='#d7b5a6'>
+              <bucket>&quot;hyundai&quot;</bucket>
+            </map>
+            <map to='#d7b5a6'>
+              <bucket>&quot;pontiac&quot;</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>&quot;dodge&quot;</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>&quot;maserati&quot;</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>&quot;toyota&quot;</bucket>
+            </map>
+            <map to='#f1ce63'>
+              <bucket>&quot;chevrolet&quot;</bucket>
+            </map>
+            <map to='#f1ce63'>
+              <bucket>&quot;lexus&quot;</bucket>
+            </map>
+            <map to='#f1ce63'>
+              <bucket>&quot;subaru&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;audi&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;jaguar&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;rolls-royce&quot;</bucket>
+            </map>
+            <map to='#fabfd2'>
+              <bucket>&quot;geo&quot;</bucket>
+            </map>
+            <map to='#fabfd2'>
+              <bucket>&quot;mitsubishi&quot;</bucket>
+            </map>
+            <map to='#ff9d9a'>
+              <bucket>&quot;ferrari&quot;</bucket>
+            </map>
+            <map to='#ff9d9a'>
+              <bucket>&quot;mazda&quot;</bucket>
+            </map>
+            <map to='#ff9d9a'>
+              <bucket>&quot;volkswagen&quot;</bucket>
+            </map>
+            <map to='#ffbe7d'>
+              <bucket>&quot;bentley&quot;</bucket>
+            </map>
+            <map to='#ffbe7d'>
+              <bucket>&quot;jeep&quot;</bucket>
+            </map>
+            <map to='#ffbe7d'>
+              <bucket>&quot;saab&quot;</bucket>
+            </map>
+          </encoding>
+        </style-rule>
+      </style>
+      <semantic-values>
+        <semantic-value key='[Country].[Name]' value='&quot;United States&quot;' />
+        <semantic-value key='[State].[Name]' value='%null%' />
+      </semantic-values>
+      <date-options start-of-week='monday' />
+      <object-graph>
+        <objects>
+          <object caption='dim_datum' id='dim_datum_127D0A28A37B4AACAAAC75BE561BF7B0'>
+            <properties context=''>
+              <relation connection='mysql.16ycx041cdodk615dq6sp0bf0neh' name='dim_datum' table='[dim_datum]' type='table' />
+            </properties>
+          </object>
+          <object caption='dim_lokacija' id='dim_lokacija_DC0696E9B236450584F0AA081767B8F2'>
+            <properties context=''>
+              <relation connection='mysql.16ycx041cdodk615dq6sp0bf0neh' name='dim_lokacija' table='[dim_lokacija]' type='table' />
+            </properties>
+          </object>
+          <object caption='dim_prodavac' id='dim_prodavac_1B5501A678F446CCB2B4DF0C5939EAA0'>
+            <properties context=''>
+              <relation connection='mysql.16ycx041cdodk615dq6sp0bf0neh' name='dim_prodavac' table='[dim_prodavac]' type='table' />
+            </properties>
+          </object>
+          <object caption='dim_stanje' id='dim_stanje_189BC8E2F4AF47DE83C9552F441FA77C'>
+            <properties context=''>
+              <relation connection='mysql.16ycx041cdodk615dq6sp0bf0neh' name='dim_stanje' table='[dim_stanje]' type='table' />
+            </properties>
+          </object>
+          <object caption='dim_vozilo' id='dim_vozilo_FD29F7C835FD4B8580CC15D3888D9325'>
+            <properties context=''>
+              <relation connection='mysql.16ycx041cdodk615dq6sp0bf0neh' name='dim_vozilo' table='[dim_vozilo]' type='table' />
+            </properties>
+          </object>
+          <object caption='fact_vehicle_sales' id='fact_vehicle_sales_011A10D9EF6F4F6C8F9AD0AFDF2253CE'>
+            <properties context=''>
+              <relation connection='mysql.16ycx041cdodk615dq6sp0bf0neh' name='fact_vehicle_sales' table='[fact_vehicle_sales]' type='table' />
+            </properties>
+          </object>
+        </objects>
+        <relationships>
+          <relationship>
+            <expression op='='>
+              <expression op='[date_tk]' />
+              <expression op='[date_tk (dim_datum)]' />
+            </expression>
+            <first-end-point object-id='fact_vehicle_sales_011A10D9EF6F4F6C8F9AD0AFDF2253CE' />
+            <second-end-point is-db-set-unique-key='true' object-id='dim_datum_127D0A28A37B4AACAAAC75BE561BF7B0' unique-key='true' />
+          </relationship>
+          <relationship>
+            <expression op='='>
+              <expression op='[location_tk]' />
+              <expression op='[location_tk (dim_lokacija)]' />
+            </expression>
+            <first-end-point object-id='fact_vehicle_sales_011A10D9EF6F4F6C8F9AD0AFDF2253CE' />
+            <second-end-point is-db-set-unique-key='true' object-id='dim_lokacija_DC0696E9B236450584F0AA081767B8F2' unique-key='true' />
+          </relationship>
+          <relationship>
+            <expression op='='>
+              <expression op='[seller_tk]' />
+              <expression op='[seller_tk (dim_prodavac)]' />
+            </expression>
+            <first-end-point object-id='fact_vehicle_sales_011A10D9EF6F4F6C8F9AD0AFDF2253CE' />
+            <second-end-point is-db-set-unique-key='true' object-id='dim_prodavac_1B5501A678F446CCB2B4DF0C5939EAA0' unique-key='true' />
+          </relationship>
+          <relationship>
+            <expression op='='>
+              <expression op='[condition_tk]' />
+              <expression op='[condition_tk (dim_stanje)]' />
+            </expression>
+            <first-end-point object-id='fact_vehicle_sales_011A10D9EF6F4F6C8F9AD0AFDF2253CE' />
+            <second-end-point is-db-set-unique-key='true' object-id='dim_stanje_189BC8E2F4AF47DE83C9552F441FA77C' unique-key='true' />
+          </relationship>
+          <relationship>
+            <expression op='='>
+              <expression op='[vehicle_tk]' />
+              <expression op='[vehicle_tk (dim_vozilo)]' />
+            </expression>
+            <first-end-point object-id='fact_vehicle_sales_011A10D9EF6F4F6C8F9AD0AFDF2253CE' />
+            <second-end-point is-db-set-unique-key='true' object-id='dim_vozilo_FD29F7C835FD4B8580CC15D3888D9325' unique-key='true' />
+          </relationship>
+        </relationships>
+      </object-graph>
+    </datasource>
+  </datasources>
+  <mapsources>
+    <mapsource name='Tableau' />
+  </mapsources>
+  <worksheets>
+    <worksheet name='Sheet 1'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run>Prosječna cijena po marki vozila</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='fact_vehicle_sales+ (cars_price_dw)' name='federated.0apnkjd1myow5n1b2tesv01wjyex' />
+          </datasources>
+          <datasource-dependencies datasource='federated.0apnkjd1myow5n1b2tesv01wjyex'>
+            <column-instance column='[selling_price]' derivation='Avg' name='[avg:selling_price:qk]' pivot='key' type='quantitative' />
+            <column datatype='string' name='[color]' role='dimension' type='nominal' />
+            <column datatype='string' name='[make]' role='dimension' type='nominal' />
+            <column datatype='string' name='[model]' role='dimension' type='nominal' />
+            <column-instance column='[color]' derivation='None' name='[none:color:nk]' pivot='key' type='nominal' />
+            <column-instance column='[make]' derivation='None' name='[none:make:nk]' pivot='key' type='nominal' />
+            <column-instance column='[model]' derivation='None' name='[none:model:nk]' pivot='key' type='nominal' />
+            <column-instance column='[transmission]' derivation='None' name='[none:transmission:nk]' pivot='key' type='nominal' />
+            <column aggregation='Sum' datatype='real' name='[selling_price]' role='dimension' type='ordinal' />
+            <column datatype='string' name='[transmission]' role='dimension' type='nominal' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.0apnkjd1myow5n1b2tesv01wjyex].[none:color:nk]'>
+            <groupfilter function='level-members' level='[none:color:nk]' user:ui-enumeration='all' user:ui-marker='enumerate' />
+          </filter>
+          <filter class='categorical' column='[federated.0apnkjd1myow5n1b2tesv01wjyex].[none:model:nk]'>
+            <groupfilter function='level-members' level='[none:model:nk]' user:ui-enumeration='all' user:ui-marker='enumerate' />
+          </filter>
+          <filter class='categorical' column='[federated.0apnkjd1myow5n1b2tesv01wjyex].[none:transmission:nk]'>
+            <groupfilter function='level-members' level='[none:transmission:nk]' user:ui-enumeration='all' user:ui-marker='enumerate' />
+          </filter>
+          <shelf-sorts>
+            <shelf-sort-v2 dimension-to-sort='[federated.0apnkjd1myow5n1b2tesv01wjyex].[none:make:nk]' direction='DESC' is-on-innermost-dimension='true' measure-to-sort-by='[federated.0apnkjd1myow5n1b2tesv01wjyex].[avg:selling_price:qk]' shelf='rows' />
+          </shelf-sorts>
+          <slices>
+            <column>[federated.0apnkjd1myow5n1b2tesv01wjyex].[none:model:nk]</column>
+            <column>[federated.0apnkjd1myow5n1b2tesv01wjyex].[none:transmission:nk]</column>
+            <column>[federated.0apnkjd1myow5n1b2tesv01wjyex].[none:color:nk]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style />
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-color' value='#f1ce63' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.0apnkjd1myow5n1b2tesv01wjyex].[none:make:nk]</rows>
+        <cols>[federated.0apnkjd1myow5n1b2tesv01wjyex].[avg:selling_price:qk]</cols>
+      </table>
+      <simple-id uuid='{35B5AC1A-FDC9-4D2B-860B-6E4E5838FF1E}' />
+    </worksheet>
+    <worksheet name='Sheet 10'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run>Prosječna cijena vozila</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='fact_vehicle_sales+ (cars_price_dw)' name='federated.0apnkjd1myow5n1b2tesv01wjyex' />
+          </datasources>
+          <datasource-dependencies datasource='federated.0apnkjd1myow5n1b2tesv01wjyex'>
+            <column-instance column='[selling_price]' derivation='Avg' name='[avg:selling_price:qk]' pivot='key' type='quantitative' />
+            <column aggregation='Sum' datatype='real' name='[selling_price]' role='dimension' type='ordinal' />
+          </datasource-dependencies>
+          <aggregation value='true' />
+        </view>
+        <style />
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-color' value='#f9a655' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.0apnkjd1myow5n1b2tesv01wjyex].[avg:selling_price:qk]</rows>
+        <cols />
+      </table>
+      <simple-id uuid='{56E3D69D-E961-40B7-A3B2-67CDEE4BCA3E}' />
+    </worksheet>
+    <worksheet name='Sheet 11'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run>Prodaja po stanju vozila</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='fact_vehicle_sales+ (cars_price_dw)' name='federated.0apnkjd1myow5n1b2tesv01wjyex' />
+          </datasources>
+          <datasource-dependencies datasource='federated.0apnkjd1myow5n1b2tesv01wjyex'>
+            <column datatype='string' name='[body]' role='dimension' type='nominal' />
+            <column-instance column='[body]' derivation='Count' name='[cnt:body:qk]' pivot='key' type='quantitative' />
+            <column datatype='real' name='[condition_val]' role='measure' type='quantitative' />
+            <column-instance column='[condition_val]' derivation='None' name='[none:condition_val:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='axis'>
+            <encoding attr='space' class='0' field='[federated.0apnkjd1myow5n1b2tesv01wjyex].[none:condition_val:qk]' field-type='quantitative' max='81.351336014843' min='-0.75817949959497177' range-type='fixed' scope='cols' type='space' />
+            <encoding attr='space' class='0' field='[federated.0apnkjd1myow5n1b2tesv01wjyex].[cnt:body:qk]' field-type='quantitative' max='23316' min='2363' range-type='fixed' scope='rows' type='space' />
+          </style-rule>
+          <style-rule element='refline'>
+            <format attr='stroke-color' id='refline0' value='#000000' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane id='3' selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Area' />
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-color' value='#c290b4' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.0apnkjd1myow5n1b2tesv01wjyex].[cnt:body:qk]</rows>
+        <cols>[federated.0apnkjd1myow5n1b2tesv01wjyex].[none:condition_val:qk]</cols>
+      </table>
+      <simple-id uuid='{96CF734E-9354-4C24-B4E4-84827E4D9C47}' />
+    </worksheet>
+    <worksheet name='Sheet 12'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run>Prodaja vozila po državama</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='fact_vehicle_sales+ (cars_price_dw)' name='federated.0apnkjd1myow5n1b2tesv01wjyex' />
+          </datasources>
+          <mapsources>
+            <mapsource name='Tableau' />
+          </mapsources>
+          <datasource-dependencies datasource='federated.0apnkjd1myow5n1b2tesv01wjyex'>
+            <column-instance column='[vehicle_tk]' derivation='Count' name='[cnt:vehicle_tk:qk]' pivot='key' type='quantitative' />
+            <column datatype='string' name='[make]' role='dimension' type='nominal' />
+            <column-instance column='[make]' derivation='None' name='[none:make:nk]' pivot='key' type='nominal' />
+            <column-instance column='[state]' derivation='None' name='[none:state:nk]' pivot='key' type='nominal' />
+            <column datatype='string' name='[state]' role='dimension' semantic-role='[State].[Name]' type='nominal' />
+            <column aggregation='Sum' datatype='integer' name='[vehicle_tk]' role='dimension' type='ordinal' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.0apnkjd1myow5n1b2tesv01wjyex].[none:make:nk]'>
+            <groupfilter function='union' user:ui-domain='database' user:ui-enumeration='inclusive' user:ui-marker='enumerate'>
+              <groupfilter function='member' level='[none:make:nk]' member='&quot;acura&quot;' />
+              <groupfilter function='member' level='[none:make:nk]' member='&quot;aston martin&quot;' />
+              <groupfilter function='member' level='[none:make:nk]' member='&quot;audi&quot;' />
+              <groupfilter function='member' level='[none:make:nk]' member='&quot;bentley&quot;' />
+              <groupfilter function='member' level='[none:make:nk]' member='&quot;bmw&quot;' />
+              <groupfilter function='member' level='[none:make:nk]' member='&quot;buick&quot;' />
+              <groupfilter function='member' level='[none:make:nk]' member='&quot;cadillac&quot;' />
+              <groupfilter function='member' level='[none:make:nk]' member='&quot;chevrolet&quot;' />
+              <groupfilter function='member' level='[none:make:nk]' member='&quot;chrysler&quot;' />
+              <groupfilter function='member' level='[none:make:nk]' member='&quot;daewoo&quot;' />
+              <groupfilter function='member' level='[none:make:nk]' member='&quot;dodge&quot;' />
+              <groupfilter function='member' level='[none:make:nk]' member='&quot;ferrari&quot;' />
+              <groupfilter function='member' level='[none:make:nk]' member='&quot;fiat&quot;' />
+              <groupfilter function='member' level='[none:make:nk]' member='&quot;fisker&quot;' />
+              <groupfilter function='member' level='[none:make:nk]' member='&quot;ford&quot;' />
+              <groupfilter function='member' level='[none:make:nk]' member='&quot;geo&quot;' />
+              <groupfilter function='member' level='[none:make:nk]' member='&quot;gmc&quot;' />
+              <groupfilter function='member' level='[none:make:nk]' member='&quot;honda&quot;' />
+              <groupfilter function='member' level='[none:make:nk]' member='&quot;hummer&quot;' />
+              <groupfilter function='member' level='[none:make:nk]' member='&quot;hyundai&quot;' />
+              <groupfilter function='member' level='[none:make:nk]' member='&quot;infiniti&quot;' />
+              <groupfilter function='member' level='[none:make:nk]' member='&quot;isuzu&quot;' />
+              <groupfilter function='member' level='[none:make:nk]' member='&quot;jaguar&quot;' />
+              <groupfilter function='member' level='[none:make:nk]' member='&quot;jeep&quot;' />
+              <groupfilter function='member' level='[none:make:nk]' member='&quot;kia&quot;' />
+              <groupfilter function='member' level='[none:make:nk]' member='&quot;lamborghini&quot;' />
+              <groupfilter function='member' level='[none:make:nk]' member='&quot;land rover&quot;' />
+              <groupfilter function='member' level='[none:make:nk]' member='&quot;lexus&quot;' />
+              <groupfilter function='member' level='[none:make:nk]' member='&quot;lincoln&quot;' />
+              <groupfilter function='member' level='[none:make:nk]' member='&quot;lotus&quot;' />
+              <groupfilter function='member' level='[none:make:nk]' member='&quot;maserati&quot;' />
+              <groupfilter function='member' level='[none:make:nk]' member='&quot;mazda&quot;' />
+              <groupfilter function='member' level='[none:make:nk]' member='&quot;mercedes-benz&quot;' />
+              <groupfilter function='member' level='[none:make:nk]' member='&quot;mercury&quot;' />
+              <groupfilter function='member' level='[none:make:nk]' member='&quot;mini&quot;' />
+              <groupfilter function='member' level='[none:make:nk]' member='&quot;mitsubishi&quot;' />
+              <groupfilter function='member' level='[none:make:nk]' member='&quot;nissan&quot;' />
+              <groupfilter function='member' level='[none:make:nk]' member='&quot;oldsmobile&quot;' />
+              <groupfilter function='member' level='[none:make:nk]' member='&quot;plymouth&quot;' />
+              <groupfilter function='member' level='[none:make:nk]' member='&quot;pontiac&quot;' />
+              <groupfilter function='member' level='[none:make:nk]' member='&quot;porsche&quot;' />
+              <groupfilter function='member' level='[none:make:nk]' member='&quot;ram&quot;' />
+              <groupfilter function='member' level='[none:make:nk]' member='&quot;rolls-royce&quot;' />
+              <groupfilter function='member' level='[none:make:nk]' member='&quot;saab&quot;' />
+              <groupfilter function='member' level='[none:make:nk]' member='&quot;saturn&quot;' />
+              <groupfilter function='member' level='[none:make:nk]' member='&quot;scion&quot;' />
+              <groupfilter function='member' level='[none:make:nk]' member='&quot;smart&quot;' />
+              <groupfilter function='member' level='[none:make:nk]' member='&quot;subaru&quot;' />
+              <groupfilter function='member' level='[none:make:nk]' member='&quot;suzuki&quot;' />
+              <groupfilter function='member' level='[none:make:nk]' member='&quot;tesla&quot;' />
+              <groupfilter function='member' level='[none:make:nk]' member='&quot;toyota&quot;' />
+              <groupfilter function='member' level='[none:make:nk]' member='&quot;volkswagen&quot;' />
+              <groupfilter function='member' level='[none:make:nk]' member='&quot;volvo&quot;' />
+            </groupfilter>
+          </filter>
+          <slices>
+            <column>[federated.0apnkjd1myow5n1b2tesv01wjyex].[none:make:nk]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='map'>
+            <format attr='washout' value='0.0' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <mark-sizing mark-sizing-setting='marks-scaling-off' />
+            <encodings>
+              <color column='[federated.0apnkjd1myow5n1b2tesv01wjyex].[cnt:vehicle_tk:qk]' />
+              <lod column='[federated.0apnkjd1myow5n1b2tesv01wjyex].[none:state:nk]' />
+              <geometry column='[federated.0apnkjd1myow5n1b2tesv01wjyex].[Geometry (generated)]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='size' value='2' />
+                <format attr='mark-labels-show' value='true' />
+                <format attr='mark-labels-cull' value='true' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.0apnkjd1myow5n1b2tesv01wjyex].[Latitude (generated)]</rows>
+        <cols>[federated.0apnkjd1myow5n1b2tesv01wjyex].[Longitude (generated)]</cols>
+      </table>
+      <simple-id uuid='{F7A6AFCA-2388-4E6A-B314-9F7AAF6D1616}' />
+    </worksheet>
+    <worksheet name='Sheet 12 (2)'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run>Ukupno vrijednost transakcija po državama</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='fact_vehicle_sales+ (cars_price_dw)' name='federated.0apnkjd1myow5n1b2tesv01wjyex' />
+          </datasources>
+          <mapsources>
+            <mapsource name='Tableau' />
+          </mapsources>
+          <datasource-dependencies datasource='federated.0apnkjd1myow5n1b2tesv01wjyex'>
+            <column datatype='string' name='[make]' role='dimension' type='nominal' />
+            <column-instance column='[make]' derivation='None' name='[none:make:nk]' pivot='key' type='nominal' />
+            <column-instance column='[state]' derivation='None' name='[none:state:nk]' pivot='key' type='nominal' />
+            <column aggregation='Sum' datatype='real' name='[selling_price]' role='dimension' type='ordinal' />
+            <column datatype='string' name='[state]' role='dimension' semantic-role='[State].[Name]' type='nominal' />
+            <column-instance column='[selling_price]' derivation='Sum' name='[sum:selling_price:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.0apnkjd1myow5n1b2tesv01wjyex].[none:make:nk]'>
+            <groupfilter function='union' user:ui-domain='database' user:ui-enumeration='inclusive' user:ui-marker='enumerate'>
+              <groupfilter function='member' level='[none:make:nk]' member='&quot;acura&quot;' />
+              <groupfilter function='member' level='[none:make:nk]' member='&quot;aston martin&quot;' />
+              <groupfilter function='member' level='[none:make:nk]' member='&quot;audi&quot;' />
+              <groupfilter function='member' level='[none:make:nk]' member='&quot;bentley&quot;' />
+              <groupfilter function='member' level='[none:make:nk]' member='&quot;bmw&quot;' />
+              <groupfilter function='member' level='[none:make:nk]' member='&quot;buick&quot;' />
+              <groupfilter function='member' level='[none:make:nk]' member='&quot;cadillac&quot;' />
+              <groupfilter function='member' level='[none:make:nk]' member='&quot;chevrolet&quot;' />
+              <groupfilter function='member' level='[none:make:nk]' member='&quot;chrysler&quot;' />
+              <groupfilter function='member' level='[none:make:nk]' member='&quot;daewoo&quot;' />
+              <groupfilter function='member' level='[none:make:nk]' member='&quot;dodge&quot;' />
+              <groupfilter function='member' level='[none:make:nk]' member='&quot;ferrari&quot;' />
+              <groupfilter function='member' level='[none:make:nk]' member='&quot;fiat&quot;' />
+              <groupfilter function='member' level='[none:make:nk]' member='&quot;fisker&quot;' />
+              <groupfilter function='member' level='[none:make:nk]' member='&quot;ford&quot;' />
+              <groupfilter function='member' level='[none:make:nk]' member='&quot;geo&quot;' />
+              <groupfilter function='member' level='[none:make:nk]' member='&quot;gmc&quot;' />
+              <groupfilter function='member' level='[none:make:nk]' member='&quot;honda&quot;' />
+              <groupfilter function='member' level='[none:make:nk]' member='&quot;hummer&quot;' />
+              <groupfilter function='member' level='[none:make:nk]' member='&quot;hyundai&quot;' />
+              <groupfilter function='member' level='[none:make:nk]' member='&quot;infiniti&quot;' />
+              <groupfilter function='member' level='[none:make:nk]' member='&quot;isuzu&quot;' />
+              <groupfilter function='member' level='[none:make:nk]' member='&quot;jaguar&quot;' />
+              <groupfilter function='member' level='[none:make:nk]' member='&quot;jeep&quot;' />
+              <groupfilter function='member' level='[none:make:nk]' member='&quot;kia&quot;' />
+              <groupfilter function='member' level='[none:make:nk]' member='&quot;lamborghini&quot;' />
+              <groupfilter function='member' level='[none:make:nk]' member='&quot;land rover&quot;' />
+              <groupfilter function='member' level='[none:make:nk]' member='&quot;lexus&quot;' />
+              <groupfilter function='member' level='[none:make:nk]' member='&quot;lincoln&quot;' />
+              <groupfilter function='member' level='[none:make:nk]' member='&quot;lotus&quot;' />
+              <groupfilter function='member' level='[none:make:nk]' member='&quot;maserati&quot;' />
+              <groupfilter function='member' level='[none:make:nk]' member='&quot;mazda&quot;' />
+              <groupfilter function='member' level='[none:make:nk]' member='&quot;mercedes-benz&quot;' />
+              <groupfilter function='member' level='[none:make:nk]' member='&quot;mercury&quot;' />
+              <groupfilter function='member' level='[none:make:nk]' member='&quot;mini&quot;' />
+              <groupfilter function='member' level='[none:make:nk]' member='&quot;mitsubishi&quot;' />
+              <groupfilter function='member' level='[none:make:nk]' member='&quot;nissan&quot;' />
+              <groupfilter function='member' level='[none:make:nk]' member='&quot;oldsmobile&quot;' />
+              <groupfilter function='member' level='[none:make:nk]' member='&quot;plymouth&quot;' />
+              <groupfilter function='member' level='[none:make:nk]' member='&quot;pontiac&quot;' />
+              <groupfilter function='member' level='[none:make:nk]' member='&quot;porsche&quot;' />
+              <groupfilter function='member' level='[none:make:nk]' member='&quot;ram&quot;' />
+              <groupfilter function='member' level='[none:make:nk]' member='&quot;rolls-royce&quot;' />
+              <groupfilter function='member' level='[none:make:nk]' member='&quot;saab&quot;' />
+              <groupfilter function='member' level='[none:make:nk]' member='&quot;saturn&quot;' />
+              <groupfilter function='member' level='[none:make:nk]' member='&quot;scion&quot;' />
+              <groupfilter function='member' level='[none:make:nk]' member='&quot;smart&quot;' />
+              <groupfilter function='member' level='[none:make:nk]' member='&quot;subaru&quot;' />
+              <groupfilter function='member' level='[none:make:nk]' member='&quot;suzuki&quot;' />
+              <groupfilter function='member' level='[none:make:nk]' member='&quot;tesla&quot;' />
+              <groupfilter function='member' level='[none:make:nk]' member='&quot;toyota&quot;' />
+              <groupfilter function='member' level='[none:make:nk]' member='&quot;volkswagen&quot;' />
+              <groupfilter function='member' level='[none:make:nk]' member='&quot;volvo&quot;' />
+            </groupfilter>
+          </filter>
+          <slices>
+            <column>[federated.0apnkjd1myow5n1b2tesv01wjyex].[none:make:nk]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='mark'>
+            <encoding attr='color' field='[federated.0apnkjd1myow5n1b2tesv01wjyex].[sum:selling_price:qk]' palette='orange_10_0' type='interpolated' />
+          </style-rule>
+          <style-rule element='map'>
+            <format attr='washout' value='0.0' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <mark-sizing mark-sizing-setting='marks-scaling-off' />
+            <encodings>
+              <color column='[federated.0apnkjd1myow5n1b2tesv01wjyex].[sum:selling_price:qk]' />
+              <lod column='[federated.0apnkjd1myow5n1b2tesv01wjyex].[none:state:nk]' />
+              <geometry column='[federated.0apnkjd1myow5n1b2tesv01wjyex].[Geometry (generated)]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='size' value='2' />
+                <format attr='mark-labels-show' value='true' />
+                <format attr='mark-labels-cull' value='true' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.0apnkjd1myow5n1b2tesv01wjyex].[Latitude (generated)]</rows>
+        <cols>[federated.0apnkjd1myow5n1b2tesv01wjyex].[Longitude (generated)]</cols>
+      </table>
+      <simple-id uuid='{1445069C-7C5D-480B-819F-71B82C055893}' />
+    </worksheet>
+    <worksheet name='Sheet 13'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run>Najaktivniji prodavači</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='fact_vehicle_sales+ (cars_price_dw)' name='federated.0apnkjd1myow5n1b2tesv01wjyex' />
+          </datasources>
+          <datasource-dependencies datasource='federated.0apnkjd1myow5n1b2tesv01wjyex'>
+            <column-instance column='[vehicle_tk]' derivation='Count' name='[cnt:vehicle_tk:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[seller]' derivation='None' name='[none:seller:nk]' pivot='key' type='nominal' />
+            <column datatype='string' name='[seller]' role='dimension' type='nominal' />
+            <column aggregation='Sum' datatype='integer' name='[vehicle_tk]' role='dimension' type='ordinal' />
+          </datasource-dependencies>
+          <shelf-sorts>
+            <shelf-sort-v2 dimension-to-sort='[federated.0apnkjd1myow5n1b2tesv01wjyex].[none:seller:nk]' direction='DESC' is-on-innermost-dimension='true' measure-to-sort-by='[federated.0apnkjd1myow5n1b2tesv01wjyex].[cnt:vehicle_tk:qk]' shelf='rows' />
+          </shelf-sorts>
+          <aggregation value='true' />
+        </view>
+        <style />
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-color' value='#59a14f' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.0apnkjd1myow5n1b2tesv01wjyex].[none:seller:nk]</rows>
+        <cols>[federated.0apnkjd1myow5n1b2tesv01wjyex].[cnt:vehicle_tk:qk]</cols>
+      </table>
+      <simple-id uuid='{F9FEE2EF-BC0A-4823-9631-8D8359B637B5}' />
+    </worksheet>
+    <worksheet name='Sheet 14'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run>Prosječna cijena po prodavaču</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='fact_vehicle_sales+ (cars_price_dw)' name='federated.0apnkjd1myow5n1b2tesv01wjyex' />
+          </datasources>
+          <datasource-dependencies datasource='federated.0apnkjd1myow5n1b2tesv01wjyex'>
+            <column-instance column='[selling_price]' derivation='Avg' name='[avg:selling_price:qk]' pivot='key' type='quantitative' />
+            <column datatype='string' name='[make]' role='dimension' type='nominal' />
+            <column-instance column='[make]' derivation='None' name='[none:make:nk]' pivot='key' type='nominal' />
+            <column-instance column='[seller]' derivation='None' name='[none:seller:nk]' pivot='key' type='nominal' />
+            <column-instance column='[state]' derivation='None' name='[none:state:nk]' pivot='key' type='nominal' />
+            <column datatype='string' name='[seller]' role='dimension' type='nominal' />
+            <column aggregation='Sum' datatype='real' name='[selling_price]' role='dimension' type='ordinal' />
+            <column datatype='string' name='[state]' role='dimension' semantic-role='[State].[Name]' type='nominal' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.0apnkjd1myow5n1b2tesv01wjyex].[none:make:nk]'>
+            <groupfilter function='union' user:ui-domain='database' user:ui-enumeration='inclusive' user:ui-marker='enumerate'>
+              <groupfilter function='member' level='[none:make:nk]' member='&quot;acura&quot;' />
+              <groupfilter function='member' level='[none:make:nk]' member='&quot;aston martin&quot;' />
+              <groupfilter function='member' level='[none:make:nk]' member='&quot;audi&quot;' />
+              <groupfilter function='member' level='[none:make:nk]' member='&quot;bentley&quot;' />
+              <groupfilter function='member' level='[none:make:nk]' member='&quot;bmw&quot;' />
+              <groupfilter function='member' level='[none:make:nk]' member='&quot;buick&quot;' />
+              <groupfilter function='member' level='[none:make:nk]' member='&quot;cadillac&quot;' />
+              <groupfilter function='member' level='[none:make:nk]' member='&quot;chevrolet&quot;' />
+              <groupfilter function='member' level='[none:make:nk]' member='&quot;chrysler&quot;' />
+              <groupfilter function='member' level='[none:make:nk]' member='&quot;daewoo&quot;' />
+              <groupfilter function='member' level='[none:make:nk]' member='&quot;dodge&quot;' />
+              <groupfilter function='member' level='[none:make:nk]' member='&quot;ferrari&quot;' />
+              <groupfilter function='member' level='[none:make:nk]' member='&quot;fiat&quot;' />
+              <groupfilter function='member' level='[none:make:nk]' member='&quot;fisker&quot;' />
+              <groupfilter function='member' level='[none:make:nk]' member='&quot;ford&quot;' />
+              <groupfilter function='member' level='[none:make:nk]' member='&quot;geo&quot;' />
+              <groupfilter function='member' level='[none:make:nk]' member='&quot;gmc&quot;' />
+              <groupfilter function='member' level='[none:make:nk]' member='&quot;honda&quot;' />
+              <groupfilter function='member' level='[none:make:nk]' member='&quot;hummer&quot;' />
+              <groupfilter function='member' level='[none:make:nk]' member='&quot;hyundai&quot;' />
+              <groupfilter function='member' level='[none:make:nk]' member='&quot;infiniti&quot;' />
+              <groupfilter function='member' level='[none:make:nk]' member='&quot;isuzu&quot;' />
+              <groupfilter function='member' level='[none:make:nk]' member='&quot;jaguar&quot;' />
+              <groupfilter function='member' level='[none:make:nk]' member='&quot;jeep&quot;' />
+              <groupfilter function='member' level='[none:make:nk]' member='&quot;kia&quot;' />
+              <groupfilter function='member' level='[none:make:nk]' member='&quot;lamborghini&quot;' />
+              <groupfilter function='member' level='[none:make:nk]' member='&quot;land rover&quot;' />
+              <groupfilter function='member' level='[none:make:nk]' member='&quot;lexus&quot;' />
+              <groupfilter function='member' level='[none:make:nk]' member='&quot;lincoln&quot;' />
+              <groupfilter function='member' level='[none:make:nk]' member='&quot;lotus&quot;' />
+              <groupfilter function='member' level='[none:make:nk]' member='&quot;maserati&quot;' />
+              <groupfilter function='member' level='[none:make:nk]' member='&quot;mazda&quot;' />
+              <groupfilter function='member' level='[none:make:nk]' member='&quot;mercedes-benz&quot;' />
+              <groupfilter function='member' level='[none:make:nk]' member='&quot;mercury&quot;' />
+              <groupfilter function='member' level='[none:make:nk]' member='&quot;mini&quot;' />
+              <groupfilter function='member' level='[none:make:nk]' member='&quot;mitsubishi&quot;' />
+              <groupfilter function='member' level='[none:make:nk]' member='&quot;nissan&quot;' />
+              <groupfilter function='member' level='[none:make:nk]' member='&quot;oldsmobile&quot;' />
+              <groupfilter function='member' level='[none:make:nk]' member='&quot;plymouth&quot;' />
+              <groupfilter function='member' level='[none:make:nk]' member='&quot;pontiac&quot;' />
+              <groupfilter function='member' level='[none:make:nk]' member='&quot;porsche&quot;' />
+              <groupfilter function='member' level='[none:make:nk]' member='&quot;ram&quot;' />
+              <groupfilter function='member' level='[none:make:nk]' member='&quot;rolls-royce&quot;' />
+              <groupfilter function='member' level='[none:make:nk]' member='&quot;saab&quot;' />
+              <groupfilter function='member' level='[none:make:nk]' member='&quot;saturn&quot;' />
+              <groupfilter function='member' level='[none:make:nk]' member='&quot;scion&quot;' />
+              <groupfilter function='member' level='[none:make:nk]' member='&quot;smart&quot;' />
+              <groupfilter function='member' level='[none:make:nk]' member='&quot;subaru&quot;' />
+              <groupfilter function='member' level='[none:make:nk]' member='&quot;suzuki&quot;' />
+              <groupfilter function='member' level='[none:make:nk]' member='&quot;tesla&quot;' />
+              <groupfilter function='member' level='[none:make:nk]' member='&quot;toyota&quot;' />
+              <groupfilter function='member' level='[none:make:nk]' member='&quot;volkswagen&quot;' />
+              <groupfilter function='member' level='[none:make:nk]' member='&quot;volvo&quot;' />
+            </groupfilter>
+          </filter>
+          <filter class='categorical' column='[federated.0apnkjd1myow5n1b2tesv01wjyex].[none:state:nk]'>
+            <groupfilter function='union' user:ui-domain='database' user:ui-enumeration='inclusive' user:ui-marker='enumerate'>
+              <groupfilter function='member' level='[none:state:nk]' member='&quot;alabama&quot;' />
+              <groupfilter function='member' level='[none:state:nk]' member='&quot;arizona&quot;' />
+              <groupfilter function='member' level='[none:state:nk]' member='&quot;california&quot;' />
+              <groupfilter function='member' level='[none:state:nk]' member='&quot;colorado&quot;' />
+              <groupfilter function='member' level='[none:state:nk]' member='&quot;florida&quot;' />
+              <groupfilter function='member' level='[none:state:nk]' member='&quot;georgia&quot;' />
+              <groupfilter function='member' level='[none:state:nk]' member='&quot;hawaii&quot;' />
+              <groupfilter function='member' level='[none:state:nk]' member='&quot;illinois&quot;' />
+              <groupfilter function='member' level='[none:state:nk]' member='&quot;indiana&quot;' />
+              <groupfilter function='member' level='[none:state:nk]' member='&quot;louisiana&quot;' />
+              <groupfilter function='member' level='[none:state:nk]' member='&quot;maryland&quot;' />
+              <groupfilter function='member' level='[none:state:nk]' member='&quot;massachusetts&quot;' />
+              <groupfilter function='member' level='[none:state:nk]' member='&quot;michigan&quot;' />
+              <groupfilter function='member' level='[none:state:nk]' member='&quot;minnesota&quot;' />
+              <groupfilter function='member' level='[none:state:nk]' member='&quot;mississippi&quot;' />
+              <groupfilter function='member' level='[none:state:nk]' member='&quot;missouri&quot;' />
+              <groupfilter function='member' level='[none:state:nk]' member='&quot;nebraska&quot;' />
+              <groupfilter function='member' level='[none:state:nk]' member='&quot;nevada&quot;' />
+              <groupfilter function='member' level='[none:state:nk]' member='&quot;new jersey&quot;' />
+              <groupfilter function='member' level='[none:state:nk]' member='&quot;new mexico&quot;' />
+              <groupfilter function='member' level='[none:state:nk]' member='&quot;new york&quot;' />
+              <groupfilter function='member' level='[none:state:nk]' member='&quot;north carolina&quot;' />
+              <groupfilter function='member' level='[none:state:nk]' member='&quot;ohio&quot;' />
+              <groupfilter function='member' level='[none:state:nk]' member='&quot;oklahoma&quot;' />
+              <groupfilter function='member' level='[none:state:nk]' member='&quot;oregon&quot;' />
+              <groupfilter function='member' level='[none:state:nk]' member='&quot;pennsylvania&quot;' />
+              <groupfilter function='member' level='[none:state:nk]' member='&quot;puerto rico&quot;' />
+              <groupfilter function='member' level='[none:state:nk]' member='&quot;south carolina&quot;' />
+              <groupfilter function='member' level='[none:state:nk]' member='&quot;tennessee&quot;' />
+              <groupfilter function='member' level='[none:state:nk]' member='&quot;texas&quot;' />
+              <groupfilter function='member' level='[none:state:nk]' member='&quot;utah&quot;' />
+              <groupfilter function='member' level='[none:state:nk]' member='&quot;virginia&quot;' />
+              <groupfilter function='member' level='[none:state:nk]' member='&quot;washington&quot;' />
+              <groupfilter function='member' level='[none:state:nk]' member='&quot;wisconsin&quot;' />
+            </groupfilter>
+          </filter>
+          <shelf-sorts>
+            <shelf-sort-v2 dimension-to-sort='[federated.0apnkjd1myow5n1b2tesv01wjyex].[none:seller:nk]' direction='DESC' is-on-innermost-dimension='true' measure-to-sort-by='[federated.0apnkjd1myow5n1b2tesv01wjyex].[avg:selling_price:qk]' shelf='rows' />
+          </shelf-sorts>
+          <slices>
+            <column>[federated.0apnkjd1myow5n1b2tesv01wjyex].[none:make:nk]</column>
+            <column>[federated.0apnkjd1myow5n1b2tesv01wjyex].[none:state:nk]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style />
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-color' value='#f17b79' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.0apnkjd1myow5n1b2tesv01wjyex].[none:seller:nk]</rows>
+        <cols>[federated.0apnkjd1myow5n1b2tesv01wjyex].[avg:selling_price:qk]</cols>
+      </table>
+      <simple-id uuid='{16C513A3-0B1F-495A-A41A-CBFDC0BEFC3E}' />
+    </worksheet>
+    <worksheet name='Sheet 15'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run>Prosječna cijena po godini proizvodnje</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='fact_vehicle_sales+ (cars_price_dw)' name='federated.0apnkjd1myow5n1b2tesv01wjyex' />
+          </datasources>
+          <datasource-dependencies datasource='federated.0apnkjd1myow5n1b2tesv01wjyex'>
+            <column-instance column='[selling_price]' derivation='Avg' name='[avg:selling_price:qk]' pivot='key' type='quantitative' />
+            <column datatype='string' name='[make]' role='dimension' type='nominal' />
+            <column-instance column='[make]' derivation='None' name='[none:make:nk]' pivot='key' type='nominal' />
+            <column-instance column='[transmission]' derivation='None' name='[none:transmission:nk]' pivot='key' type='nominal' />
+            <column-instance column='[year]' derivation='None' name='[none:year:qk]' pivot='key' type='quantitative' />
+            <column aggregation='Sum' datatype='real' name='[selling_price]' role='dimension' type='ordinal' />
+            <column datatype='string' name='[transmission]' role='dimension' type='nominal' />
+            <column datatype='integer' name='[year]' role='dimension' type='quantitative' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.0apnkjd1myow5n1b2tesv01wjyex].[none:make:nk]'>
+            <groupfilter function='union' user:ui-domain='database' user:ui-enumeration='inclusive' user:ui-marker='enumerate'>
+              <groupfilter function='member' level='[none:make:nk]' member='&quot;acura&quot;' />
+              <groupfilter function='member' level='[none:make:nk]' member='&quot;aston martin&quot;' />
+              <groupfilter function='member' level='[none:make:nk]' member='&quot;audi&quot;' />
+              <groupfilter function='member' level='[none:make:nk]' member='&quot;bentley&quot;' />
+              <groupfilter function='member' level='[none:make:nk]' member='&quot;bmw&quot;' />
+              <groupfilter function='member' level='[none:make:nk]' member='&quot;buick&quot;' />
+              <groupfilter function='member' level='[none:make:nk]' member='&quot;cadillac&quot;' />
+              <groupfilter function='member' level='[none:make:nk]' member='&quot;chevrolet&quot;' />
+              <groupfilter function='member' level='[none:make:nk]' member='&quot;chrysler&quot;' />
+              <groupfilter function='member' level='[none:make:nk]' member='&quot;daewoo&quot;' />
+              <groupfilter function='member' level='[none:make:nk]' member='&quot;dodge&quot;' />
+              <groupfilter function='member' level='[none:make:nk]' member='&quot;ferrari&quot;' />
+              <groupfilter function='member' level='[none:make:nk]' member='&quot;fiat&quot;' />
+              <groupfilter function='member' level='[none:make:nk]' member='&quot;fisker&quot;' />
+              <groupfilter function='member' level='[none:make:nk]' member='&quot;ford&quot;' />
+              <groupfilter function='member' level='[none:make:nk]' member='&quot;geo&quot;' />
+              <groupfilter function='member' level='[none:make:nk]' member='&quot;gmc&quot;' />
+              <groupfilter function='member' level='[none:make:nk]' member='&quot;honda&quot;' />
+              <groupfilter function='member' level='[none:make:nk]' member='&quot;hummer&quot;' />
+              <groupfilter function='member' level='[none:make:nk]' member='&quot;hyundai&quot;' />
+              <groupfilter function='member' level='[none:make:nk]' member='&quot;infiniti&quot;' />
+              <groupfilter function='member' level='[none:make:nk]' member='&quot;isuzu&quot;' />
+              <groupfilter function='member' level='[none:make:nk]' member='&quot;jaguar&quot;' />
+              <groupfilter function='member' level='[none:make:nk]' member='&quot;jeep&quot;' />
+              <groupfilter function='member' level='[none:make:nk]' member='&quot;kia&quot;' />
+              <groupfilter function='member' level='[none:make:nk]' member='&quot;lamborghini&quot;' />
+              <groupfilter function='member' level='[none:make:nk]' member='&quot;land rover&quot;' />
+              <groupfilter function='member' level='[none:make:nk]' member='&quot;lexus&quot;' />
+              <groupfilter function='member' level='[none:make:nk]' member='&quot;lincoln&quot;' />
+              <groupfilter function='member' level='[none:make:nk]' member='&quot;lotus&quot;' />
+              <groupfilter function='member' level='[none:make:nk]' member='&quot;maserati&quot;' />
+              <groupfilter function='member' level='[none:make:nk]' member='&quot;mazda&quot;' />
+              <groupfilter function='member' level='[none:make:nk]' member='&quot;mercedes-benz&quot;' />
+              <groupfilter function='member' level='[none:make:nk]' member='&quot;mercury&quot;' />
+              <groupfilter function='member' level='[none:make:nk]' member='&quot;mini&quot;' />
+              <groupfilter function='member' level='[none:make:nk]' member='&quot;mitsubishi&quot;' />
+              <groupfilter function='member' level='[none:make:nk]' member='&quot;nissan&quot;' />
+              <groupfilter function='member' level='[none:make:nk]' member='&quot;oldsmobile&quot;' />
+              <groupfilter function='member' level='[none:make:nk]' member='&quot;plymouth&quot;' />
+              <groupfilter function='member' level='[none:make:nk]' member='&quot;pontiac&quot;' />
+              <groupfilter function='member' level='[none:make:nk]' member='&quot;porsche&quot;' />
+              <groupfilter function='member' level='[none:make:nk]' member='&quot;ram&quot;' />
+              <groupfilter function='member' level='[none:make:nk]' member='&quot;rolls-royce&quot;' />
+              <groupfilter function='member' level='[none:make:nk]' member='&quot;saab&quot;' />
+              <groupfilter function='member' level='[none:make:nk]' member='&quot;saturn&quot;' />
+              <groupfilter function='member' level='[none:make:nk]' member='&quot;scion&quot;' />
+              <groupfilter function='member' level='[none:make:nk]' member='&quot;smart&quot;' />
+              <groupfilter function='member' level='[none:make:nk]' member='&quot;subaru&quot;' />
+              <groupfilter function='member' level='[none:make:nk]' member='&quot;suzuki&quot;' />
+              <groupfilter function='member' level='[none:make:nk]' member='&quot;tesla&quot;' />
+              <groupfilter function='member' level='[none:make:nk]' member='&quot;toyota&quot;' />
+              <groupfilter function='member' level='[none:make:nk]' member='&quot;volkswagen&quot;' />
+              <groupfilter function='member' level='[none:make:nk]' member='&quot;volvo&quot;' />
+            </groupfilter>
+          </filter>
+          <filter class='categorical' column='[federated.0apnkjd1myow5n1b2tesv01wjyex].[none:transmission:nk]'>
+            <groupfilter function='union' user:ui-domain='database' user:ui-enumeration='inclusive' user:ui-marker='enumerate'>
+              <groupfilter function='member' level='[none:transmission:nk]' member='&quot;automatic&quot;' />
+              <groupfilter function='member' level='[none:transmission:nk]' member='&quot;manual&quot;' />
+            </groupfilter>
+          </filter>
+          <slices>
+            <column>[federated.0apnkjd1myow5n1b2tesv01wjyex].[none:make:nk]</column>
+            <column>[federated.0apnkjd1myow5n1b2tesv01wjyex].[none:transmission:nk]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style />
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+          </pane>
+        </panes>
+        <rows>[federated.0apnkjd1myow5n1b2tesv01wjyex].[avg:selling_price:qk]</rows>
+        <cols>[federated.0apnkjd1myow5n1b2tesv01wjyex].[none:year:qk]</cols>
+      </table>
+      <simple-id uuid='{327A251D-C431-4C83-87BC-DED3E9E7876B}' />
+    </worksheet>
+    <worksheet name='Sheet 2'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run>Broj prodanih vozila po marki</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='fact_vehicle_sales+ (cars_price_dw)' name='federated.0apnkjd1myow5n1b2tesv01wjyex' />
+          </datasources>
+          <datasource-dependencies datasource='federated.0apnkjd1myow5n1b2tesv01wjyex'>
+            <column-instance column='[vehicle_tk (dim_vozilo)]' derivation='Count' name='[cnt:vehicle_tk (dim_vozilo):qk]' pivot='key' type='quantitative' />
+            <column datatype='string' name='[make]' role='dimension' type='nominal' />
+            <column-instance column='[make]' derivation='None' name='[none:make:nk]' pivot='key' type='nominal' />
+            <column aggregation='Sum' datatype='integer' name='[vehicle_tk (dim_vozilo)]' role='dimension' type='ordinal' />
+          </datasource-dependencies>
+          <aggregation value='true' />
+        </view>
+        <style />
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Pie' />
+            <mark-sizing mark-sizing-setting='marks-scaling-off' />
+            <encodings>
+              <color column='[federated.0apnkjd1myow5n1b2tesv01wjyex].[none:make:nk]' />
+              <wedge-size column='[federated.0apnkjd1myow5n1b2tesv01wjyex].[cnt:vehicle_tk (dim_vozilo):qk]' />
+              <size column='[federated.0apnkjd1myow5n1b2tesv01wjyex].[cnt:vehicle_tk (dim_vozilo):qk]' />
+              <text column='[federated.0apnkjd1myow5n1b2tesv01wjyex].[none:make:nk]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='size' value='2' />
+                <format attr='mark-labels-show' value='true' />
+                <format attr='mark-labels-cull' value='true' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows />
+        <cols />
+      </table>
+      <simple-id uuid='{0E8E8925-E24F-453B-B99C-BDC3ECD26912}' />
+    </worksheet>
+    <worksheet name='Sheet 3'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run>Kilometraža vs cijena</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='fact_vehicle_sales+ (cars_price_dw)' name='federated.0apnkjd1myow5n1b2tesv01wjyex' />
+          </datasources>
+          <mapsources>
+            <mapsource name='Tableau' />
+          </mapsources>
+          <datasource-dependencies datasource='federated.0apnkjd1myow5n1b2tesv01wjyex'>
+            <column-instance column='[selling_price]' derivation='Avg' name='[avg:selling_price:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[odometer]' derivation='None' name='[none:odometer:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[selling_price]' derivation='None' name='[none:selling_price:ok]' pivot='key' type='ordinal' />
+            <column datatype='real' name='[odometer]' role='measure' type='quantitative' />
+            <column aggregation='Sum' datatype='real' name='[selling_price]' role='dimension' type='ordinal' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.0apnkjd1myow5n1b2tesv01wjyex].[none:selling_price:ok]'>
+            <groupfilter function='level-members' level='[none:selling_price:ok]' user:ui-manual-selection='true' user:ui-manual-selection-all-when-empty='true' user:ui-manual-selection-is-empty='true' user:ui-marker='enumerate' />
+          </filter>
+          <slices>
+            <column>[federated.0apnkjd1myow5n1b2tesv01wjyex].[none:selling_price:ok]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='map'>
+            <format attr='washout' value='0.0' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane id='2' selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+          </pane>
+        </panes>
+        <rows>[federated.0apnkjd1myow5n1b2tesv01wjyex].[avg:selling_price:qk]</rows>
+        <cols>[federated.0apnkjd1myow5n1b2tesv01wjyex].[none:odometer:qk]</cols>
+      </table>
+      <simple-id uuid='{45EAC361-3B0E-4F6C-90F1-3A3323CC9A9A}' />
+    </worksheet>
+    <worksheet name='Sheet 4'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run>Mjenjač i cijena</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='fact_vehicle_sales+ (cars_price_dw)' name='federated.0apnkjd1myow5n1b2tesv01wjyex' />
+          </datasources>
+          <datasource-dependencies datasource='federated.0apnkjd1myow5n1b2tesv01wjyex'>
+            <column-instance column='[selling_price]' derivation='Avg' name='[avg:selling_price:qk]' pivot='key' type='quantitative' />
+            <column datatype='string' name='[make]' role='dimension' type='nominal' />
+            <column-instance column='[make]' derivation='None' name='[none:make:nk]' pivot='key' type='nominal' />
+            <column-instance column='[transmission]' derivation='None' name='[none:transmission:nk]' pivot='key' type='nominal' />
+            <column aggregation='Sum' datatype='real' name='[selling_price]' role='dimension' type='ordinal' />
+            <column datatype='string' name='[transmission]' role='dimension' type='nominal' />
+          </datasource-dependencies>
+          <aggregation value='true' />
+        </view>
+        <style />
+        <panes>
+          <pane id='2' selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <color column='[federated.0apnkjd1myow5n1b2tesv01wjyex].[:Measure Names]' />
+            </encodings>
+          </pane>
+        </panes>
+        <rows>[federated.0apnkjd1myow5n1b2tesv01wjyex].[avg:selling_price:qk]</rows>
+        <cols>[federated.0apnkjd1myow5n1b2tesv01wjyex].[none:transmission:nk]</cols>
+      </table>
+      <simple-id uuid='{765CF37F-3D30-420E-874D-72DA960484E0}' />
+    </worksheet>
+    <worksheet name='Sheet 7'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run>Trend prodaje kroz vrijeme</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='fact_vehicle_sales+ (cars_price_dw)' name='federated.0apnkjd1myow5n1b2tesv01wjyex' />
+          </datasources>
+          <datasource-dependencies datasource='federated.0apnkjd1myow5n1b2tesv01wjyex'>
+            <column datatype='date' name='[full_date]' role='dimension' type='ordinal' />
+            <column aggregation='Sum' datatype='real' name='[selling_price]' role='dimension' type='ordinal' />
+            <column-instance column='[selling_price]' derivation='Sum' name='[sum:selling_price:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[full_date]' derivation='Year-Trunc' name='[tyr:full_date:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <aggregation value='true' />
+        </view>
+        <style />
+        <panes>
+          <pane id='2' selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-color' value='#1b1b1b' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.0apnkjd1myow5n1b2tesv01wjyex].[sum:selling_price:qk]</rows>
+        <cols>[federated.0apnkjd1myow5n1b2tesv01wjyex].[tyr:full_date:qk]</cols>
+      </table>
+      <simple-id uuid='{C65E2BFD-8BE3-4976-BB7F-98F6FAEA945D}' />
+    </worksheet>
+    <worksheet name='Sheet 8'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run>Broj prodanih vozila po godištu</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='fact_vehicle_sales+ (cars_price_dw)' name='federated.0apnkjd1myow5n1b2tesv01wjyex' />
+          </datasources>
+          <datasource-dependencies datasource='federated.0apnkjd1myow5n1b2tesv01wjyex'>
+            <column-instance column='[vehicle_tk (dim_vozilo)]' derivation='Count' name='[cnt:vehicle_tk (dim_vozilo):qk]' pivot='key' type='quantitative' />
+            <column-instance column='[year]' derivation='None' name='[none:year:qk]' pivot='key' type='quantitative' />
+            <column aggregation='Sum' datatype='integer' name='[vehicle_tk (dim_vozilo)]' role='dimension' type='ordinal' />
+            <column datatype='integer' name='[year]' role='dimension' type='quantitative' />
+          </datasource-dependencies>
+          <aggregation value='true' />
+        </view>
+        <style />
+        <panes>
+          <pane id='1' selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Area' />
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-color' value='#8cd17d' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.0apnkjd1myow5n1b2tesv01wjyex].[cnt:vehicle_tk (dim_vozilo):qk]</rows>
+        <cols>[federated.0apnkjd1myow5n1b2tesv01wjyex].[none:year:qk]</cols>
+      </table>
+      <simple-id uuid='{EE14A9DD-9CE9-45B6-BC90-07CFD831C20A}' />
+    </worksheet>
+    <worksheet name='Sheet 9'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run>Ukupan profit prodaje</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='fact_vehicle_sales+ (cars_price_dw)' name='federated.0apnkjd1myow5n1b2tesv01wjyex' />
+          </datasources>
+          <datasource-dependencies datasource='federated.0apnkjd1myow5n1b2tesv01wjyex'>
+            <column aggregation='Sum' datatype='real' name='[selling_price]' role='dimension' type='ordinal' />
+            <column-instance column='[selling_price]' derivation='Sum' name='[sum:selling_price:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <aggregation value='true' />
+        </view>
+        <style />
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-cull' value='true' />
+                <format attr='mark-labels-show' value='false' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.0apnkjd1myow5n1b2tesv01wjyex].[sum:selling_price:qk]</rows>
+        <cols />
+      </table>
+      <simple-id uuid='{AD5C702C-BC94-40D2-B372-597CC65F7719}' />
+    </worksheet>
+  </worksheets>
+  <dashboards>
+    <dashboard enable-sort-zone-taborder='true' name='Analiza kupaca/prodavača'>
+      <style />
+      <size maxheight='800' maxwidth='1000' minheight='800' minwidth='1000' />
+      <datasources>
+        <datasource caption='fact_vehicle_sales+ (cars_price_dw)' name='federated.0apnkjd1myow5n1b2tesv01wjyex' />
+      </datasources>
+      <datasource-dependencies datasource='federated.0apnkjd1myow5n1b2tesv01wjyex'>
+        <column datatype='string' name='[make]' role='dimension' type='nominal' />
+        <column-instance column='[make]' derivation='None' name='[none:make:nk]' pivot='key' type='nominal' />
+      </datasource-dependencies>
+      <zones>
+        <zone h='100000' id='4' type-v2='layout-basic' w='100000' x='0' y='0'>
+          <zone h='98000' id='7' param='horz' type-v2='layout-flow' w='98400' x='800' y='1000'>
+            <zone h='98000' id='5' type-v2='layout-basic' w='82400' x='800' y='1000'>
+              <zone h='49000' id='3' name='Sheet 12' w='41200' x='42000' y='1000'>
+                <zone-style>
+                  <format attr='border-color' value='#000000' />
+                  <format attr='border-style' value='none' />
+                  <format attr='border-width' value='0' />
+                  <format attr='margin' value='4' />
+                </zone-style>
+              </zone>
+              <zone h='49000' id='10' name='Sheet 12 (2)' w='41200' x='800' y='50000'>
+                <zone-style>
+                  <format attr='border-color' value='#000000' />
+                  <format attr='border-style' value='none' />
+                  <format attr='border-width' value='0' />
+                  <format attr='margin' value='4' />
+                </zone-style>
+              </zone>
+              <zone h='49000' id='13' name='Sheet 13' w='41200' x='800' y='1000'>
+                <zone-style>
+                  <format attr='border-color' value='#000000' />
+                  <format attr='border-style' value='none' />
+                  <format attr='border-width' value='0' />
+                  <format attr='margin' value='4' />
+                </zone-style>
+              </zone>
+              <zone h='49000' id='14' name='Sheet 14' w='41200' x='42000' y='50000'>
+                <zone-style>
+                  <format attr='border-color' value='#000000' />
+                  <format attr='border-style' value='none' />
+                  <format attr='border-width' value='0' />
+                  <format attr='margin' value='4' />
+                </zone-style>
+              </zone>
+            </zone>
+            <zone fixed-size='160' h='98000' id='6' is-fixed='true' param='vert' type-v2='layout-flow' w='16000' x='83200' y='1000'>
+              <zone h='40875' id='8' name='Sheet 12' param='[federated.0apnkjd1myow5n1b2tesv01wjyex].[none:make:nk]' type-v2='filter' w='16000' x='83200' y='1000'>
+                <zone-style>
+                  <format attr='border-color' value='#000000' />
+                  <format attr='border-style' value='none' />
+                  <format attr='border-width' value='0' />
+                  <format attr='margin' value='4' />
+                </zone-style>
+              </zone>
+              <zone h='8125' id='9' name='Sheet 12' pane-specification-id='0' param='[federated.0apnkjd1myow5n1b2tesv01wjyex].[cnt:vehicle_tk:qk]' type-v2='color' w='16000' x='83200' y='41875'>
+                <zone-style>
+                  <format attr='border-color' value='#000000' />
+                  <format attr='border-style' value='none' />
+                  <format attr='border-width' value='0' />
+                  <format attr='margin' value='4' />
+                </zone-style>
+              </zone>
+              <zone h='40875' id='11' name='Sheet 12 (2)' param='[federated.0apnkjd1myow5n1b2tesv01wjyex].[none:make:nk]' type-v2='filter' w='16000' x='83200' y='50000'>
+                <zone-style>
+                  <format attr='border-color' value='#000000' />
+                  <format attr='border-style' value='none' />
+                  <format attr='border-width' value='0' />
+                  <format attr='margin' value='4' />
+                </zone-style>
+              </zone>
+              <zone h='8125' id='12' name='Sheet 12 (2)' pane-specification-id='0' param='[federated.0apnkjd1myow5n1b2tesv01wjyex].[sum:selling_price:qk]' type-v2='color' w='16000' x='83200' y='90875'>
+                <zone-style>
+                  <format attr='border-color' value='#000000' />
+                  <format attr='border-style' value='none' />
+                  <format attr='border-width' value='0' />
+                  <format attr='margin' value='4' />
+                </zone-style>
+              </zone>
+            </zone>
+          </zone>
+          <zone-style>
+            <format attr='border-color' value='#000000' />
+            <format attr='border-style' value='none' />
+            <format attr='border-width' value='0' />
+            <format attr='margin' value='8' />
+          </zone-style>
+        </zone>
+      </zones>
+      <devicelayouts>
+        <devicelayout auto-generated='true' name='Phone'>
+          <size maxheight='1450' minheight='1450' sizing-mode='vscroll' />
+          <zones>
+            <zone h='100000' id='16' type-v2='layout-basic' w='100000' x='0' y='0'>
+              <zone h='98000' id='15' param='vert' type-v2='layout-flow' w='98400' x='800' y='1000'>
+                <zone fixed-size='280' h='49000' id='13' is-fixed='true' name='Sheet 13' w='41200' x='800' y='1000'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone h='40875' id='8' mode='checkdropdown' name='Sheet 12' param='[federated.0apnkjd1myow5n1b2tesv01wjyex].[none:make:nk]' type-v2='filter' w='16000' x='83200' y='1000'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='280' h='49000' id='3' is-fixed='true' name='Sheet 12' w='41200' x='42000' y='1000'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone h='8125' id='9' name='Sheet 12' pane-specification-id='0' param='[federated.0apnkjd1myow5n1b2tesv01wjyex].[cnt:vehicle_tk:qk]' type-v2='color' w='16000' x='83200' y='41875'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone h='40875' id='11' mode='checkdropdown' name='Sheet 12 (2)' param='[federated.0apnkjd1myow5n1b2tesv01wjyex].[none:make:nk]' type-v2='filter' w='16000' x='83200' y='50000'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='280' h='49000' id='10' is-fixed='true' name='Sheet 12 (2)' w='41200' x='800' y='50000'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone h='8125' id='12' name='Sheet 12 (2)' pane-specification-id='0' param='[federated.0apnkjd1myow5n1b2tesv01wjyex].[sum:selling_price:qk]' type-v2='color' w='16000' x='83200' y='90875'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='280' h='49000' id='14' is-fixed='true' name='Sheet 14' w='41200' x='42000' y='50000'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+              </zone>
+              <zone-style>
+                <format attr='border-color' value='#000000' />
+                <format attr='border-style' value='none' />
+                <format attr='border-width' value='0' />
+                <format attr='margin' value='8' />
+              </zone-style>
+            </zone>
+          </zones>
+        </devicelayout>
+      </devicelayouts>
+      <simple-id uuid='{550C2684-E339-4116-AFD9-2D6F6525C08F}' />
+    </dashboard>
+    <dashboard enable-sort-zone-taborder='true' name='Analiza prodaje'>
+      <style />
+      <size maxheight='800' maxwidth='1000' minheight='800' minwidth='1000' />
+      <zones>
+        <zone h='100000' id='4' type-v2='layout-basic' w='100000' x='0' y='0'>
+          <zone h='32666' id='3' name='Sheet 7' w='49200' x='800' y='1000'>
+            <zone-style>
+              <format attr='border-color' value='#000000' />
+              <format attr='border-style' value='none' />
+              <format attr='border-width' value='0' />
+              <format attr='margin' value='4' />
+            </zone-style>
+          </zone>
+          <zone h='32666' id='5' name='Sheet 8' w='49200' x='50000' y='1000'>
+            <zone-style>
+              <format attr='border-color' value='#000000' />
+              <format attr='border-style' value='none' />
+              <format attr='border-width' value='0' />
+              <format attr='margin' value='4' />
+            </zone-style>
+          </zone>
+          <zone h='32666' id='6' name='Sheet 9' w='49200' x='800' y='66334'>
+            <zone-style>
+              <format attr='border-color' value='#000000' />
+              <format attr='border-style' value='none' />
+              <format attr='border-width' value='0' />
+              <format attr='margin' value='4' />
+            </zone-style>
+          </zone>
+          <zone h='32666' id='7' name='Sheet 10' w='49200' x='50000' y='66334'>
+            <zone-style>
+              <format attr='border-color' value='#000000' />
+              <format attr='border-style' value='none' />
+              <format attr='border-width' value='0' />
+              <format attr='margin' value='4' />
+            </zone-style>
+          </zone>
+          <zone h='32668' id='8' name='Sheet 11' w='98400' x='800' y='33666'>
+            <zone-style>
+              <format attr='border-color' value='#000000' />
+              <format attr='border-style' value='none' />
+              <format attr='border-width' value='0' />
+              <format attr='margin' value='4' />
+            </zone-style>
+          </zone>
+          <zone-style>
+            <format attr='border-color' value='#000000' />
+            <format attr='border-style' value='none' />
+            <format attr='border-width' value='0' />
+            <format attr='margin' value='8' />
+          </zone-style>
+        </zone>
+      </zones>
+      <devicelayouts>
+        <devicelayout auto-generated='true' name='Phone'>
+          <size maxheight='1350' minheight='1350' sizing-mode='vscroll' />
+          <zones>
+            <zone h='100000' id='10' type-v2='layout-basic' w='100000' x='0' y='0'>
+              <zone h='98000' id='9' param='vert' type-v2='layout-flow' w='98400' x='800' y='1000'>
+                <zone fixed-size='253' h='32666' id='3' is-fixed='true' name='Sheet 7' w='49200' x='800' y='1000'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='253' h='32666' id='5' is-fixed='true' name='Sheet 8' w='49200' x='50000' y='1000'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='254' h='32668' id='8' is-fixed='true' name='Sheet 11' w='98400' x='800' y='33666'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='253' h='32666' id='6' is-fixed='true' name='Sheet 9' w='49200' x='800' y='66334'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='253' h='32666' id='7' is-fixed='true' name='Sheet 10' w='49200' x='50000' y='66334'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+              </zone>
+              <zone-style>
+                <format attr='border-color' value='#000000' />
+                <format attr='border-style' value='none' />
+                <format attr='border-width' value='0' />
+                <format attr='margin' value='8' />
+              </zone-style>
+            </zone>
+          </zones>
+        </devicelayout>
+      </devicelayouts>
+      <simple-id uuid='{39182A3E-03A1-4C60-A198-1A2460FBC074}' />
+    </dashboard>
+    <dashboard enable-sort-zone-taborder='true' name='Analiza vozila'>
+      <style />
+      <size maxheight='768' maxwidth='1366' minheight='768' minwidth='1366' preset-index='0' sizing-mode='fixed' />
+      <datasources>
+        <datasource caption='fact_vehicle_sales+ (cars_price_dw)' name='federated.0apnkjd1myow5n1b2tesv01wjyex' />
+      </datasources>
+      <datasource-dependencies datasource='federated.0apnkjd1myow5n1b2tesv01wjyex'>
+        <column datatype='string' name='[color]' role='dimension' type='nominal' />
+        <column datatype='string' name='[make]' role='dimension' type='nominal' />
+        <column datatype='string' name='[model]' role='dimension' type='nominal' />
+        <column-instance column='[color]' derivation='None' name='[none:color:nk]' pivot='key' type='nominal' />
+        <column-instance column='[make]' derivation='None' name='[none:make:nk]' pivot='key' type='nominal' />
+        <column-instance column='[model]' derivation='None' name='[none:model:nk]' pivot='key' type='nominal' />
+        <column-instance column='[transmission]' derivation='None' name='[none:transmission:nk]' pivot='key' type='nominal' />
+        <column datatype='string' name='[transmission]' role='dimension' type='nominal' />
+      </datasource-dependencies>
+      <zones>
+        <zone h='100000' id='4' type-v2='layout-basic' w='100000' x='0' y='0'>
+          <zone h='97916' id='7' param='horz' type-v2='layout-flow' w='98828' x='586' y='1042'>
+            <zone h='97916' id='5' type-v2='layout-basic' w='87115' x='586' y='1042'>
+              <zone h='38092' id='3' name='Sheet 1' w='43558' x='44143' y='1042'>
+                <zone-style>
+                  <format attr='border-color' value='#000000' />
+                  <format attr='border-style' value='none' />
+                  <format attr='border-width' value='0' />
+                  <format attr='margin' value='4' />
+                </zone-style>
+              </zone>
+              <zone h='51207' id='12' name='Sheet 3' w='43557' x='586' y='47751'>
+                <zone-style>
+                  <format attr='border-color' value='#000000' />
+                  <format attr='border-style' value='none' />
+                  <format attr='border-width' value='0' />
+                  <format attr='margin' value='4' />
+                </zone-style>
+              </zone>
+              <zone h='59824' id='13' name='Sheet 4' w='21779' x='44143' y='39134'>
+                <zone-style>
+                  <format attr='border-color' value='#000000' />
+                  <format attr='border-style' value='none' />
+                  <format attr='border-width' value='0' />
+                  <format attr='margin' value='4' />
+                </zone-style>
+              </zone>
+              <zone h='46709' id='11' name='Sheet 2' w='43557' x='586' y='1042'>
+                <zone-style>
+                  <format attr='border-color' value='#000000' />
+                  <format attr='border-style' value='none' />
+                  <format attr='border-width' value='0' />
+                  <format attr='margin' value='4' />
+                </zone-style>
+              </zone>
+              <zone h='59824' id='23' name='Sheet 15' w='21779' x='65922' y='39134'>
+                <zone-style>
+                  <format attr='border-color' value='#000000' />
+                  <format attr='border-style' value='none' />
+                  <format attr='border-width' value='0' />
+                  <format attr='margin' value='4' />
+                </zone-style>
+              </zone>
+            </zone>
+            <zone fixed-size='160' h='97916' id='6' is-fixed='true' param='vert' type-v2='layout-flow' w='11713' x='87701' y='1042'>
+              <zone h='26779' id='8' name='Sheet 1' param='[federated.0apnkjd1myow5n1b2tesv01wjyex].[none:color:nk]' type-v2='filter' w='11713' x='87701' y='1042'>
+                <zone-style>
+                  <format attr='border-color' value='#000000' />
+                  <format attr='border-style' value='none' />
+                  <format attr='border-width' value='0' />
+                  <format attr='margin' value='4' />
+                </zone-style>
+              </zone>
+              <zone h='11589' id='9' name='Sheet 1' param='[federated.0apnkjd1myow5n1b2tesv01wjyex].[none:transmission:nk]' type-v2='filter' w='11713' x='87701' y='27821'>
+                <zone-style>
+                  <format attr='border-color' value='#000000' />
+                  <format attr='border-style' value='none' />
+                  <format attr='border-width' value='0' />
+                  <format attr='margin' value='4' />
+                </zone-style>
+              </zone>
+              <zone h='26779' id='10' name='Sheet 1' param='[federated.0apnkjd1myow5n1b2tesv01wjyex].[none:model:nk]' type-v2='filter' w='11713' x='87701' y='39410'>
+                <zone-style>
+                  <format attr='border-color' value='#000000' />
+                  <format attr='border-style' value='none' />
+                  <format attr='border-width' value='0' />
+                  <format attr='margin' value='4' />
+                </zone-style>
+              </zone>
+              <zone h='26779' id='14' name='Sheet 4' param='[federated.0apnkjd1myow5n1b2tesv01wjyex].[none:make:nk]' type-v2='filter' w='11713' x='87701' y='66189'>
+                <zone-style>
+                  <format attr='border-color' value='#000000' />
+                  <format attr='border-style' value='none' />
+                  <format attr='border-width' value='0' />
+                  <format attr='margin' value='4' />
+                </zone-style>
+              </zone>
+              <zone h='5990' id='15' name='Sheet 4' pane-specification-id='2' param='[federated.0apnkjd1myow5n1b2tesv01wjyex].[:Measure Names]' type-v2='color' w='11713' x='87701' y='92968'>
+                <zone-style>
+                  <format attr='border-color' value='#000000' />
+                  <format attr='border-style' value='none' />
+                  <format attr='border-width' value='0' />
+                  <format attr='margin' value='4' />
+                </zone-style>
+              </zone>
+            </zone>
+          </zone>
+          <zone-style>
+            <format attr='border-color' value='#000000' />
+            <format attr='border-style' value='none' />
+            <format attr='border-width' value='0' />
+            <format attr='margin' value='8' />
+          </zone-style>
+        </zone>
+      </zones>
+      <devicelayouts>
+        <devicelayout auto-generated='true' name='Phone'>
+          <size maxheight='1750' minheight='1750' sizing-mode='vscroll' />
+          <zones>
+            <zone h='100000' id='25' type-v2='layout-basic' w='100000' x='0' y='0'>
+              <zone h='97916' id='24' param='vert' type-v2='layout-flow' w='98828' x='586' y='1042'>
+                <zone fixed-size='280' h='46709' id='11' is-fixed='true' name='Sheet 2' w='43557' x='586' y='1042'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone h='26779' id='8' mode='checkdropdown' name='Sheet 1' param='[federated.0apnkjd1myow5n1b2tesv01wjyex].[none:color:nk]' type-v2='filter' w='11713' x='87701' y='1042'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone h='11589' id='9' mode='checkdropdown' name='Sheet 1' param='[federated.0apnkjd1myow5n1b2tesv01wjyex].[none:transmission:nk]' type-v2='filter' w='11713' x='87701' y='27821'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone h='26779' id='10' mode='checkdropdown' name='Sheet 1' param='[federated.0apnkjd1myow5n1b2tesv01wjyex].[none:model:nk]' type-v2='filter' w='11713' x='87701' y='39410'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='280' h='38092' id='3' is-fixed='true' name='Sheet 1' w='43558' x='44143' y='1042'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone h='26779' id='14' mode='checkdropdown' name='Sheet 4' param='[federated.0apnkjd1myow5n1b2tesv01wjyex].[none:make:nk]' type-v2='filter' w='11713' x='87701' y='66189'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='280' h='59824' id='13' is-fixed='true' name='Sheet 4' w='21779' x='44143' y='39134'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone h='5990' id='15' name='Sheet 4' pane-specification-id='2' param='[federated.0apnkjd1myow5n1b2tesv01wjyex].[:Measure Names]' type-v2='color' w='11713' x='87701' y='92968'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='280' h='59824' id='23' is-fixed='true' name='Sheet 15' w='21779' x='65922' y='39134'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='280' h='51207' id='12' is-fixed='true' name='Sheet 3' w='43557' x='586' y='47751'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+              </zone>
+              <zone-style>
+                <format attr='border-color' value='#000000' />
+                <format attr='border-style' value='none' />
+                <format attr='border-width' value='0' />
+                <format attr='margin' value='8' />
+              </zone-style>
+            </zone>
+          </zones>
+        </devicelayout>
+      </devicelayouts>
+      <simple-id uuid='{3B6177B7-9702-4B41-8552-49FEE9C57D1B}' />
+    </dashboard>
+  </dashboards>
+  <windows source-height='30'>
+    <window class='worksheet' name='Sheet 1'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card param='[federated.0apnkjd1myow5n1b2tesv01wjyex].[none:color:nk]' type='filter' />
+            <card param='[federated.0apnkjd1myow5n1b2tesv01wjyex].[none:transmission:nk]' type='filter' />
+            <card param='[federated.0apnkjd1myow5n1b2tesv01wjyex].[none:model:nk]' type='filter' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{E630420F-3EB7-4D86-8E1A-B0CA3CC2883F}' />
+    </window>
+    <window class='worksheet' name='Sheet 2'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card pane-specification-id='0' param='[federated.0apnkjd1myow5n1b2tesv01wjyex].[none:make:nk]' type='color' />
+            <card pane-specification-id='0' param='[federated.0apnkjd1myow5n1b2tesv01wjyex].[cnt:vehicle_tk (dim_vozilo):qk]' type='size' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{1DB58EC9-2F0C-45B4-BE41-2884444F6957}' />
+    </window>
+    <window class='worksheet' name='Sheet 3'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{ABE22912-E88B-4299-86E1-87C5145E962C}' />
+    </window>
+    <window class='worksheet' name='Sheet 4'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card pane-specification-id='2' param='[federated.0apnkjd1myow5n1b2tesv01wjyex].[:Measure Names]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{BF5A0CEA-14B9-48E5-AA57-E95A2E62E42D}' />
+    </window>
+    <window class='dashboard' name='Analiza vozila'>
+      <viewpoints>
+        <viewpoint name='Sheet 1' />
+        <viewpoint name='Sheet 15'>
+          <zoom type='entire-view' />
+        </viewpoint>
+        <viewpoint name='Sheet 2'>
+          <zoom type='entire-view' />
+        </viewpoint>
+        <viewpoint name='Sheet 3' />
+        <viewpoint name='Sheet 4'>
+          <zoom type='entire-view' />
+        </viewpoint>
+      </viewpoints>
+      <active id='-1' />
+      <simple-id uuid='{0CA45FC0-CEE8-4815-8E5E-A2C7AA401417}' />
+    </window>
+    <window class='worksheet' name='Sheet 7'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{8692035E-7266-40B5-AB13-27B6E7930A41}' />
+    </window>
+    <window class='worksheet' name='Sheet 8'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{3AA56C56-3F57-4811-9388-DB314802EC4B}' />
+    </window>
+    <window class='worksheet' name='Sheet 9'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{17B1A65F-F5DF-4AD1-828A-C5C010AC5683}' />
+    </window>
+    <window class='worksheet' name='Sheet 10'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{23A05C6F-D7F7-4D75-848B-E7E6CDC6410B}' />
+    </window>
+    <window class='worksheet' name='Sheet 11'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{BF0130D4-4225-423F-BD71-ADE63FF9C690}' />
+    </window>
+    <window class='dashboard' maximized='true' name='Analiza prodaje'>
+      <viewpoints>
+        <viewpoint name='Sheet 10'>
+          <zoom type='entire-view' />
+        </viewpoint>
+        <viewpoint name='Sheet 11'>
+          <zoom type='entire-view' />
+        </viewpoint>
+        <viewpoint name='Sheet 7'>
+          <zoom type='entire-view' />
+        </viewpoint>
+        <viewpoint name='Sheet 8'>
+          <zoom type='entire-view' />
+        </viewpoint>
+        <viewpoint name='Sheet 9'>
+          <zoom type='entire-view' />
+        </viewpoint>
+      </viewpoints>
+      <active id='-1' />
+      <simple-id uuid='{A3E66EFB-08E4-4972-B13D-F903DE9ED7A4}' />
+    </window>
+    <window class='worksheet' name='Sheet 12'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card param='[federated.0apnkjd1myow5n1b2tesv01wjyex].[none:make:nk]' type='filter' />
+            <card pane-specification-id='0' param='[federated.0apnkjd1myow5n1b2tesv01wjyex].[cnt:vehicle_tk:qk]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{E1F36E82-97CD-41F1-94F0-E617BE1EEBEA}' />
+    </window>
+    <window class='worksheet' name='Sheet 12 (2)'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card param='[federated.0apnkjd1myow5n1b2tesv01wjyex].[none:make:nk]' type='filter' />
+            <card pane-specification-id='0' param='[federated.0apnkjd1myow5n1b2tesv01wjyex].[sum:selling_price:qk]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{25965D11-8954-4292-AA84-F4CAA06BAC6D}' />
+    </window>
+    <window class='worksheet' name='Sheet 13'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{7891F1FC-18D5-4971-BBB9-7C580513051C}' />
+    </window>
+    <window class='worksheet' name='Sheet 14'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{B4B3E708-EE40-4ECB-89C6-B4FD692D8CDD}' />
+    </window>
+    <window class='dashboard' name='Analiza kupaca/prodavača'>
+      <viewpoints>
+        <viewpoint name='Sheet 12'>
+          <zoom type='entire-view' />
+        </viewpoint>
+        <viewpoint name='Sheet 12 (2)'>
+          <zoom type='entire-view' />
+        </viewpoint>
+        <viewpoint name='Sheet 13' />
+        <viewpoint name='Sheet 14' />
+      </viewpoints>
+      <active id='-1' />
+      <simple-id uuid='{05FA8086-14B6-4655-8565-2EBAFD81B428}' />
+    </window>
+    <window class='worksheet' name='Sheet 15'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{5A10A7D9-B89A-4DB6-9971-3CEA0E88733C}' />
+    </window>
+  </windows>
+</workbook>

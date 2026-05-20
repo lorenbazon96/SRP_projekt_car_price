@@ -1,22 +1,22 @@
 from sqlalchemy import create_engine, text
 import pandas as pd
 
-# ================= KONEKCIJA =================
+# SPAJANJE
 engine = create_engine("mysql+pymysql://root:root@localhost:3306/cars_price")
 
-# ================= UČITAVANJE CSV =================
+# UČITAVANJE CSV 
 print("UČITAVAM CSV...")
 df = pd.read_csv("car_prices_processed_80.csv")
 
 print("Original rows:", len(df))
 print(df.columns)
 
-# ================= DATUM =================
+# DATUM
 
 df['saledate'] = df['saledate'].astype(str).str.replace(r'\s*gmt.*$', '', regex=True, case=False)
 df['saledate'] = pd.to_datetime(df['saledate'], format='mixed', errors='coerce')
 
-# ================= CLEAN =================
+# CLEAN 
 df = df.dropna(subset=[
     'make','model','state','seller',
     'sellingprice','mmr','odometer','saledate'
@@ -25,10 +25,10 @@ df = df.dropna(subset=[
 print("Rows after cleaning:", len(df))
 print("Unique years in saledate:", sorted(df['saledate'].dt.year.unique()))
 
-# ================= STAGING =================
+# STAGING 
 df.to_sql('stg_car_prices', engine, if_exists='replace', index=False)
 
-# ================= DROP =================
+# DROP 
 print("BRIŠEM TABLICE...")
 
 with engine.begin() as conn:
@@ -45,12 +45,11 @@ with engine.begin() as conn:
 
 df.to_sql('stg_car_prices', engine, if_exists='replace', index=False)
 
-# ================= CREATE =================
+# CREATE 
 print("KREIRAM TABLICE...")
 
 with engine.begin() as conn:
 
-    # SCD Type 2 na dim_vozilo
     conn.execute(text("""
     CREATE TABLE dim_vozilo (
         vehicle_tk INT AUTO_INCREMENT PRIMARY KEY,
@@ -121,7 +120,7 @@ with engine.begin() as conn:
     )
     """))
 
-# ================= DIM INSERT =================
+# DIM INSERT
 print("PUNIM DIMENZIJE...")
 
 with engine.begin() as conn:
@@ -163,7 +162,7 @@ with engine.begin() as conn:
     WHERE saledate IS NOT NULL
     """))
 
-# ================= FACT =================
+# FACT
 print("PUNIM FACT...")
 
 with engine.begin() as conn:
@@ -211,7 +210,7 @@ with engine.begin() as conn:
         ON stg.`condition` = s.condition_val
     """))
 
-# ================= PROVJERA =================
+# PROVJERA
 print("PROVJERA...")
 
 tables = [
