@@ -2839,7 +2839,7 @@
       </cards>
       <simple-id uuid='{BF5A0CEA-14B9-48E5-AA57-E95A2E62E42D}' />
     </window>
-    <window class='dashboard' name='Analiza vozila'>
+    <window class='dashboard' maximized='true' name='Analiza vozila'>
       <viewpoints>
         <viewpoint name='Sheet 1' />
         <viewpoint name='Sheet 15'>
@@ -2971,7 +2971,7 @@
       </cards>
       <simple-id uuid='{BF0130D4-4225-423F-BD71-ADE63FF9C690}' />
     </window>
-    <window class='dashboard' maximized='true' name='Analiza prodaje'>
+    <window class='dashboard' name='Analiza prodaje'>
       <viewpoints>
         <viewpoint name='Sheet 10'>
           <zoom type='entire-view' />
